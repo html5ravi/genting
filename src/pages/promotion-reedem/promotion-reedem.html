@@ -1,0 +1,48 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <!-- <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon> -->
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding no-bounce>
+  <h3>{{storeData?.promotiontitle}}</h3>
+  <p [innerHtml]="storeData?.promotiondescription | safehtml"></p>
+   <strong class="bar"></strong>
+   <h3 text-center>{{"PROMOTION_REDEEM_PAGE.STATIC_TEXT.OFFER_CODE" | translate }}</h3>
+
+   <p>{{ "PROMOTION_REDEEM_PAGE.STATIC_TEXT.SHOW_OFFER_CODE" | translate }}</p>
+  <article >
+    
+    <h2 color="isAlreadyRedeemed?red:dark">{{voucherData?.VoucherCode}}</h2>
+  </article>
+  
+  <strong class="bar"></strong>
+  <h6>{{ "COMMON.STATIC_TEXT.NAME" | translate }}:</h6>
+  <span>{{userdataProvider.getFullName()}}</span>
+  <h6>{{ "COMMON.STATIC_TEXT.MOBILE_NO" | translate }}:</h6>
+  <span>{{userdataProvider.getUserMobileNo()}}</span>
+  <h6>{{ "PROMOTION_REDEEM_PAGE.STATIC_TEXT.ISSUE_DATE" | translate }}:</h6>
+  <span *ngIf="voucherData?.ActivatedTime" [ngClass]="!isRedeemedToday ? 'red' : '' ">{{voucherData?.ActivatedTime | toLocalTime }}</span>
+  <span *ngIf="!voucherData?.ActivatedTime" [ngClass]="!isRedeemedToday ? 'red' : '' ">{{ voucherData?.AddedDate }}</span>
+
+  <button ion-button block color="dark" class="closeBtn"(click)="close()">
+    {{ "PROMOTION_REDEEM_PAGE.BUTTONS.CLOSE" | translate }}</button>
+</ion-content>

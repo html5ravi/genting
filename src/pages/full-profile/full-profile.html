@@ -1,0 +1,224 @@
+<!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+
+<ion-header>
+      <ion-navbar>
+            <ion-row>
+                  <ion-col col-2>
+                        <!-- <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon> -->
+                  </ion-col>
+                  <ion-col col-8>
+                        <figure no-margin>
+                              <img src="{{userdataProvider?.selectMallLogo}}">
+                        </figure>
+                  </ion-col>
+                  <ion-col col-2>
+                        <button ion-button icon-only menuToggle>
+                              <ion-icon tappable name="menu"></ion-icon>
+                        </button>
+                  </ion-col>
+            </ion-row>
+      </ion-navbar>
+</ion-header>
+
+<ion-content no-padding no-bounce>
+      <ion-card-content no-padding padding-left padding-right>
+            <form no-padding margin-top [formGroup]="ProfileForm" (ngSubmit)="profileData()">
+
+                  <ion-row>
+                        <ion-col col-6>
+                              <h4>{{ "FULL_PROFILE.STATIC_TEXT.PROFILE" | translate }}</h4>
+                        </ion-col>
+
+                        <ion-col col-6 text-right>
+                              <button ion-button clear color="danger" [disabled]="!ProfileForm.valid"
+                                    type="submit">{{ "FULL_PROFILE.BUTTONS.SAVE" | translate }}</button>           
+                        </ion-col>
+                  </ion-row>
+                  <ion-list>
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.EMAIL" | translate }}:</h6>
+                        <p>{{userProfileData?.UserName}}</p>
+                        <h6 no-margin margin-top *ngIf="userProfileData?.MobileNo">{{ "COMMON.STATIC_TEXT.MOBILE_NO" | translate }}:</h6>
+                        <p *ngIf="mobile">{{userProfileData.MobileNo}}</p>
+                  </ion-list>
+                  <!-- <ion-list *ngIf="!userProfileData?.MobileNo">
+                        <ion-row>
+                              <ion-col col-5>
+                                    <h6 no-margin margin-top>*{{ "COMMON.STATIC_TEXT.COUNTRY_CODE" | translate }}</h6>
+                              </ion-col>
+                              <ion-col col-7>
+                                    <h6 no-margin margin-top>*{{ "COMMON.STATIC_TEXT.MOBILE_NO" | translate }}</h6>
+                              </ion-col>
+                        </ion-row>
+                  </ion-list> -->
+                  <!-- <ion-list *ngIf="!userProfileData?.MobileNo">
+                        <ion-row class="mobile">
+                              <ion-col col-1 no-padding style="margin-top:5px;">
+                                    <span> + </span>
+                              </ion-col>
+
+                              <p text-left *ngIf="MobileNo?.touched && MobileNo?.hasError('pattern')"  class="error">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.MOBILE_NO_SHOULD_CONTAIN" | translate}}</p>
+                              <p text-left class="error" *ngIf="mobile?.touched  && mobile?.hasError('required') " >*{{ "COMMON.STATIC_TEXT.MOBILE_NO_MANDATORY" | translate }}</p>
+                              <ion-col col-4>
+                                    <ion-input type="tel" min="1" max="4" [(ngModel)]="userMobileData.countrycode" [ngModelOptions]="{standalone:true}"></ion-input>
+                              </ion-col>
+                              <ion-col col-7>
+                                    <ion-input type="number" [(ngModel)]="userProfileData.MobileNo" name="mobile" formControlName="mobile" ></ion-input>
+                              </ion-col>
+                        </ion-row>
+
+                  </ion-list> -->
+                  <ion-list>
+                        <p text-left class="error" *ngIf="firstname?.touched && firstname?.hasError('pattern')">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.FIRSTNAME_SHOULD_CONTAIN" | translate }}</p>
+                        <p text-left class="error" *ngIf=" firstname?.touched  && firstname?.hasError('required') ">*{{ "COMMON.STATIC_TEXT.FIRST_NAME_REQ" | translate }}</p>
+                        <h6 no-margin margin-top>*{{ "COMMON.STATIC_TEXT.FIRST_NAME" | translate }}:</h6>
+                        <ion-item no-padding>
+                              <ion-input type="text" [(ngModel)]="userProfileData.FirstName" placeholder="FIRST NAME" formControlName="firstname" name="firstname"
+                                    (ionBlur)="updateValue(firstname)"></ion-input>
+                        </ion-item>
+
+                        <p text-left class="error" *ngIf="lastname?.touched && lastname?.hasError('pattern')">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.LASTNAME_SHOULD_CONTAIN" | translate }}</p>
+                        <p text-left class="error" *ngIf="lastname?.touched && lastname?.hasError('required') ">*{{ "COMMON.STATIC_TEXT.LAST_NAME_REQ" | translate }}</p>
+                        <h6 no-margin margin-top>*{{ "COMMON.STATIC_TEXT.LAST_NAME" | translate }}:</h6>
+                        <ion-item no-padding>
+                              <ion-input type="text" [(ngModel)]="userProfileData.LastName" placeholder="LAST NAME" formControlName="lastname" name="lastname"
+                                    (ionBlur)="updateValue(lastname)"></ion-input>
+                        </ion-item>
+
+
+                        <p text-left *ngIf="mobile?.touched && mobile?.hasError('required')" class="error">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_MOBILE_NO" | translate }}</p>
+                        <p text-left *ngIf="mobile?.touched && mobile?.hasError('pattern')" class="error">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.MOBILE_NO_SHOULD_CONTAIN" | translate}}</p>
+                        <h6 no-margin margin-top *ngIf="!userProfileData?.MobileNo">*{{ "COMMON.STATIC_TEXT.MOBILE_NO" | translate }}:</h6>
+                        <ion-item no-padding *ngIf="!userProfileData?.MobileNo">
+                              <ion-input type="number" [(ngModel)]="userProfileData.Mobile" placeholder="CONTACT NUMBER" name="mobile" formControlName="mobile"></ion-input>
+                        </ion-item>
+
+
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.ADDRESS" | translate }}:</h6>
+                        <ion-item no-padding>
+                              <textarea type="text" name="postalAddress" [(ngModel)]="userProfileData.PostalAddress" formControlName="postalAddress"></textarea>
+                        </ion-item>
+          
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.COUNTRY" | translate }}:</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "COMMON.STATIC_TEXT.SELECT_COUNTRY" | translate }}</ion-label>
+                              <ion-select [(ngModel)]="userProfileData.Country" (ngModelChange)="updateCountry(address_country)" formControlName="address_country" name="address_country" (ionBlur)="updateCountry(address_country)">
+                                    <ion-option *ngFor="let country of countryList" value="{{country.value}}">{{country.name}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+ 
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.STATE" | translate }}:</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "COMMON.STATIC_TEXT.SELECT_STATE" | translate }}</ion-label>
+                              <ion-select name="address_state" [(ngModel)]="userProfileData.State" (ngModelChange)="updateState(address_state)" formControlName="address_state" (ionBlur)="updateState(address_state)">
+                                    <ion-option *ngFor="let state of stateList; " value="{{state.value}}">{{state.name}}</ion-option>
+                              </ion-select>
+                              <small>{{ "COMMON.STATIC_TEXT.NOT_FROM_MALAYSIA" | translate }}</small>
+                        </ion-item>
+
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.CITY" | translate }}:</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "COMMON.STATIC_TEXT.SELECT_CITY" | translate }}</ion-label>
+                              <ion-select name="city" [(ngModel)]="userProfileData.City" (ngModelChange)="updateCity(city)" formControlName="city" (ionBlur)="updateCity(city)">
+                                    <ion-option *ngFor="let city of cityList; " value="{{city.value}}">{{city.name}}</ion-option>
+                              </ion-select>
+                              <small>{{ "COMMON.STATIC_TEXT.NOT_FROM_MALAYSIA" | translate }}</small>
+                        </ion-item>
+
+                        <p text-left class="error" *ngIf="pin.touched && pin.hasError('minlength') || pin.hasError('maxlength') ">Zipcode should be 5 characters</p>
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.ZIP" | translate }}:</h6>
+                        <ion-item no-padding>
+                              <ion-input type="number" [(ngModel)]="userProfileData.Pin" name="pin" formControlName="pin"></ion-input>
+                              <small>{{ "COMMON.STATIC_TEXT.ENTER_00000" | translate }}</small>
+                        </ion-item>
+
+
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.AGE" | translate }}:</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "COMMON.STATIC_TEXT.SELECT_AGE" | translate }}</ion-label>
+                              <ion-select [(ngModel)]="userProfileData.age" formControlName="age_group" name="age_group" (ionBlur)="updateProfileAttribute(age_group, 1144)">
+                                    <ion-option *ngFor="let age of ageList" value="{{age.value}}">{{age.name}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+
+                        <h6 no-margin margin-top>{{ "COMMON.STATIC_TEXT.GENDER" | translate }}:</h6>
+                        <ion-list radio-group name="genders" [(ngModel)]="userProfileData.Gender" formControlName="gender">
+                              <ion-item>
+                                    <ion-label>{{ "COMMON.STATIC_TEXT.MALE" | translate }}</ion-label>
+                                    <ion-radio checked="false" name="male" value="male"></ion-radio>
+                              </ion-item>
+                              <ion-item>
+                                    <ion-label>{{ "COMMON.STATIC_TEXT.FEMALE" | translate }}</ion-label>
+                                    <ion-radio checked="false" name="female" value="female"></ion-radio>
+                              </ion-item>
+                        </ion-list>
+
+                        <h6 no-margin margin-top>{{ "FULL_PROFILE.STATIC_TEXT.WHAT_BRAND" | translate }}</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.SELECT_BRANDS" | translate }}</ion-label>
+                              <ion-select name="preferred_brand_one" [(ngModel)]="userProfileData.storeName1"  formControlName="preferred_brand_one" (ionBlur)="updateProfileAttributebrand(preferred_brand_one, 1200)">
+                                    <ion-option *ngFor="let store1 of storesList" value="{{store1?.brandname}}">{{store1?.brandname}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.SELECT_BRANDS" | translate }}</ion-label>
+                              <ion-select name="preferred_brand_two" [(ngModel)]="userProfileData.storeName2" formControlName="preferred_brand_two"  (ionBlur)="updateProfileAttributebrand(preferred_brand_two, 1200)">
+                                    <ion-option *ngFor="let store2 of storesList" value="{{store2?.brandname}}">{{store2?.brandname}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.SELECT_BRANDS" | translate }}</ion-label>
+                              <ion-select name="preferred_brand_thre" [(ngModel)]="userProfileData.storeName3" formControlName="preferred_brand_thre" (ionBlur)="updateProfileAttributebrand(preferred_brand_thre, 1200)">
+                                    <ion-option *ngFor="let store3 of storesList" value="{{store3?.brandname}}">{{store3?.brandname}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.SELECT_BRANDS" | translate }}</ion-label>
+                              <ion-select name="preferred_brand_four" [(ngModel)]="userProfileData.storeName4" formControlName="preferred_brand_four"  (ionBlur)="updateProfileAttributebrand(preferred_brand_four, 1200)">
+                                    <ion-option *ngFor="let store4 of storesList" value="{{store4?.brandname}}">{{store4?.brandname}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+
+                        <!-- <h6 no-margin margin-top>{{ "FULL_PROFILE.STATIC_TEXT.OTHER_BRANDS" | translate }}:</h6>
+                        <ion-item no-padding>
+                              <ion-input type="text" name="otherbrands" [(ngModel)]="userProfileData.otherbrands" formControlName="otherbrands"></ion-input>
+                        </ion-item> -->
+                        <h6 no-margin margin-top>{{ "FULL_PROFILE.STATIC_TEXT.WHAT_HOUSEHOLD_INCOME" | translate }}</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.ANNUAL_INCOME" | translate }}</ion-label>
+                              <ion-select name="household_income" [(ngModel)]="userProfileData.brandonesec1" formControlName="household_income" (ionBlur)="updateProfileAttribute(household_income, 1202)">
+                                    <ion-option *ngFor="let hs of household" value="{{hs.value}}">{{hs.name}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+                        <h6 no-margin margin-top>{{ "FULL_PROFILE.STATIC_TEXT.HOW_HEARD" | translate }}</h6>
+                        <ion-item no-padding class="itemCustom">
+                              <ion-label>{{ "FULL_PROFILE.STATIC_TEXT.SELECT" | translate }}</ion-label>
+                              <ion-select formControlName="referral_source" [(ngModel)]="userProfileData.brandonesec2" name="referral_source" (ionBlur)="updateProfileAttribute(referral_source, 1204)">
+                                    <ion-option *ngFor="let vip of viplounge" value="{{vip.value}}">{{vip.name}}</ion-option>
+                              </ion-select>
+                        </ion-item>
+                        <ion-item no-padding>
+                              <ion-label style="text-transform:none !important;">{{ "FULL_PROFILE.STATIC_TEXT.THIRD_PARTY" | translate }}</ion-label>
+                              <ion-checkbox name="Promotions" [(ngModel)]="Promotions.checked" formControlName="Promotions" (ionChange)="updateProfileAttribute(Promotions, 1208)"
+                                    color="dark" checked ></ion-checkbox>
+                        </ion-item>
+                  </ion-list>
+            </form>
+      </ion-card-content>
+</ion-content>
+
+
+<!-- Modal for Saving User Profile Update Data -->
+<mymodal #fullProfileSuccess (closeClicked)="closeProfileModal()">
+      <!--<h2 class="errorInfo"></h2>-->
+      <p text-center class="error">{{ "MODALS.STATIC_TEXT.UPDATE_PROFILE" | translate }}</p>
+      <ion-grid>
+            <ion-row>
+                  <ion-col col-12>
+                        <button ion-button (click)="closeProfileModal()">{{ "MODALS.BUTTONS.OK" | translate }}</button>
+                  </ion-col>
+            </ion-row>
+      </ion-grid>
+</mymodal>

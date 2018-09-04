@@ -1,0 +1,528 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/*=========== Default Sass Color Variables =========*/
+
+  $primary:    #fbca01 !default;
+  $secondary:  #9f295a;
+  $danger:     #007aff;
+  $dark:       #000 ;
+  $dark-x:     #333333;
+  $light-xx:   #9b9b9b;
+  $light-xxx:  #5e5a5a;
+  $dark-x :    #4a4a4a;
+  $default:    #fff;
+  $defaultmargin: 10px;
+  $fbColor: #4267b2 !important;
+  $darkgreen: 	#006400 !important;
+
+ion-header{
+  height:76px !important;
+  background: $dark;
+  overflow: hidden;
+  ion-navbar.toolbar{
+    //min-height: 75px !important;
+    top: 65%;
+    position: relative;
+    transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+  }
+  button{
+    ion-icon{
+      font-size: 35px !important;
+      position: relative;
+      top: 47%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .icon-md{
+      left: -7px !important;
+    }
+  }
+}
+
+html,body,
+ion-app.ios, ion-app.md{
+  font-family:'Simon Circular Book' !important;
+  border: none !important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:'Simon Circular Bold' !important;
+}
+.spur-tooltip-title{
+  font-family:'Simon Circular Bold' !important;
+}
+ion-content{
+  button{
+      padding: 30px 0 !important;
+      font-weight: bold !important;
+      font-size: 16px !important;
+      text-transform: uppercase !important;
+  }
+}
+    .list-ios .item-block .item-inner {
+        border-bottom: 0 !important;
+    }
+ion-header{
+  .toolbar-background{
+    background: color($colors,dark);
+  }
+  figure{
+    text-align: center;
+    img{
+      height: 40px;
+      width: 60%;
+    }
+  }
+  .col{
+    figure{
+      text-align: center;
+      img{
+        height: auto;
+        width: 169px;
+      }
+    }
+}
+
+  ion-row{
+    width: 100%;
+  }
+}
+ion-item{
+  border:0 !important;
+}
+ion-searchbar{
+  .button-clear-ios{
+    padding: 0 !important;
+  }
+    
+}
+.searchbar-ios{
+  min-height: 44px;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+.segment-ios .segment-button{
+  border-radius: 0 !important;
+}
+.bb{
+  border-bottom: 1px solid $light-xx;
+}
+.mt10{
+  margin-top: 10px !important;
+}
+
+.menu-inner{
+  width: 256px;
+  .content-md{
+      background-color: transparent !important;
+  }
+  .content-ios {
+    background-color: #000 !important;
+}
+  background: transparent !important;
+    ion-header {
+      background: rgba(0, 0, 0, 0.25) !important;
+      .toolbar-background {
+        background: rgba(0, 0, 0, 0) !important;
+    }
+  }
+  ion-list{
+    background: $dark;
+    height: 100% !important;
+    margin: 0;
+  }
+  span{
+    display: block;
+    font-size: 14px;
+    color: $default;
+    background: $dark;
+    padding: 0 0 15px 15px;
+  }
+  ion-title{
+    display: none;
+  }
+  strong{
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    background: #888;
+    text-align: right;
+    padding: 8px 15px;
+  }
+  button{
+    background: $dark;
+    color:$default;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top:1px solid #333 !important;
+    font-size: 14px !important;
+    
+  }
+  button:nth-child(7),
+  button:nth-child(10),
+  button:nth-child(13),
+  button:nth-child(15),
+  button:nth-child(20){
+    border-top: 10px solid #444 !important;
+  }
+  .item{
+    padding: 0 !important;
+    .item-inner{
+      padding: 0 0 0 15px;
+      border-bottom:0 !important;
+    }
+    button:nth-child(3) .item-inner{
+      border-bottom: 5px solid $light-xx;
+    }
+  }
+  
+}
+.itemCustom{
+  border: 1px solid $dark !important;
+    padding: 0 0 0 10px !important;
+    margin: 10px 0 20px 0;
+    height: 30px !important;
+    ion-label{
+      text-transform: uppercase;
+    }
+}
+ .select-icon {
+  right: -15px !important;
+  top: -2px !important;
+}
+ion-select{
+  padding: 13px 20px 13px 16px !important;
+}
+.select-icon-inner {
+  left: -10px !important;
+  border-top: 10px solid !important;
+  border-right: 10px solid transparent !important;
+  border-left: 10px solid transparent !important;
+  color: $dark;
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    box-shadow: none;
+}
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner,
+.item-ios.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+    box-shadow: none;
+}
+.list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child,
+.list-ios .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child{
+  box-shadow: none;
+}
+::-webkit-input-placeholder { 
+  color: $dark;
+  text-transform: uppercase;
+}
+::-moz-placeholder { 
+  color: $dark;
+  text-transform: uppercase;
+}
+:-ms-input-placeholder { 
+  color: $dark;
+  text-transform: uppercase;
+}
+:-moz-placeholder { 
+  color: $dark;
+  text-transform: uppercase;
+}
+.loading-wrapper{
+    background: transparent !important;
+    box-shadow: none !important;
+    figure{
+      img{
+        width: 75px !important;
+      }
+    }
+}
+ion-item .item-inner input {
+  margin: 5px 0 !important;
+  padding-left: 10px !important;
+  height: 22px;
+}
+ion-fab{
+  position: fixed;
+  position: device-fixed;
+  left: -10px !important;
+  border-radius: 0 !important;
+  z-index: 9999;
+  top:40% !important;
+  button.fab{
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.12), 0 8px 8px 0 rgba(0,0,0,0.24);
+      background: $primary;
+      border-radius: 0 !important;
+      border-top-right-radius: 30px !important;
+      border-bottom-right-radius: 30px !important;
+  }
+}
+
+.alert-md .alert-head,
+.alert-ios .alert-head  {
+  text-align: center;
+  padding: 10px 15px 10px;
+  border: 0;
+}
+.alert-md .alert-radio-group, 
+.alert-md .alert-checkbox-group,
+.alert-ios .alert-radio-group, 
+.alert-ios .alert-checkbox-group,{
+  border-top: 0 !important;
+}
+.alert-md .alert-tappable,
+.alert-ios .alert-tappable{
+  min-height: 3.3rem;
+}
+.alert-md .alert-checkbox-label,
+.alert-ios .alert-checkbox-label{
+  padding: 5px 26px;
+}
+.searchAutoComplete .item{
+  min-height: 3.3rem !important;
+}
+.alert-md .alert-radio-label,
+.alert-ios .alert-radio-label{
+  padding: 5px 26px !important;
+}
+
+ .alert-checkbox-icon,
+ .alert-radio-icon {
+  background: url('../assets/images/Unselected.svg') no-repeat !important ;
+  border:0 !important;
+  border-radius: 0 !important;
+}
+ .alert-md [aria-checked=true] .alert-checkbox-inner,
+ .alert-ios [aria-checked=true] .alert-checkbox-inner{
+    background: url('../assets/images/Selected.svg') no-repeat !important ;
+    left: -1px !important;
+    top: -1px;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    border-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #fff;
+    transform: rotate(0deg) !important;
+  }
+
+  .alert-md [aria-checked=true] .alert-radio-icon,
+  .alert-ios [aria-checked=true] .alert-radio-icon{
+    background: url('../assets/images/Selected.svg') no-repeat !important ;
+  }
+  .alert-md .alert-radio-inner,
+  .alert-ios .alert-radio-inner{
+    background: transparent !important;
+  }
+  .ios ion-nav > .ion-page > .toolbar.statusbar-padding:first-child, 
+  .ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child, 
+  .ios ion-tab > .ion-page > .toolbar.statusbar-padding:first-child, 
+  .ios ion-tab > .ion-page > ion-header > .toolbar.statusbar-padding:first-child, 
+  .ios ion-tabs > .ion-page.tab-subpage > ion-header > .toolbar.statusbar-padding:first-child, 
+  .ios ion-menu > .menu-inner > .toolbar.statusbar-padding:first-child, 
+  .ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child{
+    padding-top: 10px !important;
+  }
+
+  .alert-title {
+    font-size: 1.6rem !important;
+    text-transform: uppercase !important;
+}
+.alert-md .alert-radio-icon {
+  left: 13px;
+  top: 0;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #787878;
+}
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, 
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.list-ios .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, 
+.list-ios .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+  box-shadow: none !important;
+}
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-ios.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  box-shadow: none !important;
+}
+ion-item{
+  p {
+      p{
+          margin-bottom: 10px !important;
+      }
+      ul{
+          margin: -7px 0 0 0 !important;
+          li{
+             margin: -10px 0 0 0;
+          }
+      }
+  }
+}
+.back-button.show-back-button{
+  position: absolute !important;
+  z-index: 9999;
+  top: 50%;
+  transform: translateY(-40%);
+  left:10px;
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .second{
+      li{
+      width:44% !important;
+      p{
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+
+.customIonHeader{
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.18) !important;
+  background: #fbca01 !important;
+  border-radius: 0 !important;
+  border-top-right-radius: 20px !important;
+  border-top-left-radius: 20px !important;
+  width: 99px !important;
+  height: 32px !important;
+  top: auto;
+  left: 50%;
+  margin-left: -50px;
+  bottom: 0px;
+  text-align: center;
+  button{
+    background: transparent !important;
+    padding: 0 !important;
+    height: 35px !important;
+    box-shadow: none !important;
+    margin: 0 0 0 -7px !important;
+    strong{
+      color:#fff;
+      font-size: 18px;
+    }
+  }
+}
+
+.backIco{
+    color: #fff;
+    font-size: 35px;
+    position: relative;
+    padding: 0 4px;
+    display: block;
+    margin-top: 6px;
+    left: 6px;
+}
+header .backIco {
+  position: absolute !important;
+  left: 15px;
+}
+.scroll-content{
+  top:75px !important;
+  margin-top: 0 !important;
+}
+.menu-inner ion-content .scroll-content{
+  top:1px !important;
+  margin-top:75px !important;
+}
+.menu-inner span {
+  padding: 5px 0 15px 15px;
+}
+
+// top: 50%;
+// transform: translateY(-50%);
+
+
+.genBtn{
+  width: 100%;
+  padding: 24px !important;
+  margin: 20px 0 0 0;
+  span{
+      color:#fff !important;
+  }
+    
+}
+.toast-md, .toast-ios{
+  .toast-wrapper{
+    transform: translateY(0%) !important;
+    background: #9f005b !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    flex: none !important;
+    margin: auto !important;
+    bottom: 85px !important;
+    .toast-message{
+      font-size: 12px !important;
+      padding: 10px !important;
+      &:before{
+        font-family: "Ionicons";
+        content: "\f311";
+        margin: 0 4px 0 0;
+        font-size: 14px;
+      }
+    }
+    
+  }
+ 
+} 
+.error{
+  color: #f00 !important;
+}
+
+.confirm{
+  .Modalbody{
+    padding: 20px !important;
+  }
+}    
+
+textarea{
+  width: 100%;
+  padding: 5px 0 0 5px;
+  border-color: #000;
+}
+.footer{
+  .toolbar{
+    min-height: 60px !important;
+  }
+}
+.checkCorrect{
+      font-size: 25px !important;
+}
+.checkWrong {
+    font-size: 25px !important;
+}
+  .check {
+    font-size: 25px !important;
+    color: green !important;
+}

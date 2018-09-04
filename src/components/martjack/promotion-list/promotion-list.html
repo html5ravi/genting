@@ -1,0 +1,42 @@
+<section class="promotionList">
+    <ul>
+        <li *ngFor="let store of storeList" (click)="goTostore(store?.associatedstore[0])">
+            <figure>
+                <img [src]="store?.associatedstore[0]?.brandimage" />
+                <figcaption> 30% Off Entire <br />{{ Purchase}}</figcaption>
+            </figure>
+        </li>
+        <!-- <li>
+            <figure>
+                <img src="assets/images/martjack/promo2.png" />
+                <figcaption> 30% Off Entire <br /> Purchase</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="assets/images/martjack/promo1.png" />
+                <figcaption> 30% Off Entire <br /> Purchase</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="assets/images/martjack/promo2.png" />
+                <figcaption> 30% Off Entire <br /> Purchase</figcaption>
+            </figure>
+        </li> -->
+    </ul>
+</section>
+
+<mymodal #bluetooth title="Turn on Bluetooth" (closeClicked)="closeBluetoothModal()">
+        <ion-grid>
+          <div>
+              <p text-center>{{ "MODALS.STATIC_TEXT.BLUETOOTH_1" | translate }} <ion-icon ios="ios-bluetooth" md="md-bluetooth"></ion-icon> {{ "MODALS.STATIC_TEXT.BLUETOOTH_2" | translate }}”</p>
+        </div>
+            <ion-row>
+                <ion-col col-12>
+                    <button ion-button color="dark" (click)="openBluetoothSettings()">
+                      {{ "MODALS.BUTTONS.SETTINGS" | translate }}</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+      </mymodal>

@@ -1,0 +1,94 @@
+
+<top-header></top-header>
+<ion-content no-padding>
+
+
+    <ion-card no-margin style="box-shadow: none;width:100%;margin-bottom: 70px;">
+      <ion-card-header>
+        sort by
+      </ion-card-header>
+      <ion-card-content  no-padding>
+        <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 class="commonSort" (click)="setSort('pricedescending')">
+            Price - High to Low <ion-icon class="check" *ngIf="appliedSort == 'pricedescending' " name="checkmark"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 class="commonSort" (click)="setSort('priceascending')">
+              Price - Low to High <ion-icon class="check" *ngIf="appliedSort == 'priceascending' " name="checkmark"></ion-icon>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 class="commonSort" (click)="setSort('discount')">
+                Discounts <ion-icon class="check" *ngIf="appliedSort == 'discount' " name="checkmark"></ion-icon>
+                </ion-col> 
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+        <ion-card-header>
+          Filter
+        </ion-card-header>
+        <ion-card-content>
+            <ion-row *ngIf="filterdata?.Categories?.length > 0">
+                <ion-col col-12 class="commonSort" (click)="showCategories()">
+                  <strong>Category</strong>
+                </ion-col> 
+                <ion-list *ngIf="isCategoryFilterShowing">
+                  <ion-item *ngFor="let category of filterdata?.Categories">
+                    <ion-grid no-padding>
+                      <ion-row (click)="setCategoryFilter(category?.Id)">
+                        <ion-col col-12>{{category?.Name}} <ion-icon *ngIf="category?.isSelected"  class="check" name="checkmark"></ion-icon></ion-col>
+                      </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-list>
+            </ion-row>
+            <ion-row *ngIf="filterdata?.Brands?.length > 0 ">
+              <ion-col col-12  class="commonSort" (click)="showBrands()">
+               <strong>Brands</strong> 
+              </ion-col> 
+              <ion-list *ngIf="isBrandFilterShowing">
+                <ion-item *ngFor="let brand of filterdata?.Brands">
+                  <ion-grid no-padding>
+                    <ion-row (click)="setBrandFilter(brand?.Id)">
+                      <ion-col col-12>{{brand?.Name}}  <ion-icon *ngIf="brand?.isSelected"  class="check" name="checkmark"></ion-icon> </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-list>
+          </ion-row>
+            <!-- <ion-row>
+                <ion-col class="commonSort" col-12>
+                 <strong> Size</strong>
+                </ion-col> 
+            </ion-row> -->
+            <!-- <ion-row>
+                <ion-col class="commonSort" col-12>
+                  <strong>Colour</strong>
+                </ion-col> 
+            </ion-row> -->
+            <ion-row *ngIf="filterdata?.PriceRange?.length > 0 ">
+                <ion-col col-12 class="commonSort" (click)="showPrice()">
+                 <strong> Price Range</strong>
+                </ion-col>
+                <ion-list *ngIf="isPriceFilterShowing">
+                    <ion-item class="range">
+                        <ion-range dualKnobs="true" [(ngModel)]="dualValue2" [min]="dualValue?.lower" [max]="dualValue?.upper" [step]="1" snaps="false" pin="true">
+                        <ion-label class="left" range-left>MYR {{filterdata?.PriceRange[0]?.PriceMin}}</ion-label>
+                        <ion-label class="right" range-right>MYR {{filterdata?.PriceRange[filterdata?.PriceRange?.length - 1]?.PriceMax}}</ion-label>
+                      </ion-range>
+                    </ion-item>
+                </ion-list> 
+            </ion-row>
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>
+  
+<ion-footer>
+  <ion-toolbar>
+      <button ion-button block class="Viewbutton" (click)="applyFilters()">View items</button>
+
+  </ion-toolbar>
+</ion-footer>

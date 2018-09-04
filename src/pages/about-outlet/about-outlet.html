@@ -1,0 +1,66 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding no-bounce>
+  <section class="mapSec">
+    <section #MapDetail id="map"></section>
+    <figcaption>
+        <h4 *ngIf="mall?.mallname">{{mall?.mallname}}</h4>
+        <p *ngIf="mall?.addressline">{{mall?.addressline}}</p>
+        <p  *ngIf="mall?.addressline2">{{mall?.addressline2}}</p>
+        <p *ngIf="mall?.city">{{mall?.city}}</p>
+      </figcaption>
+  </section>
+
+  <ion-card-content>
+    <h6 *ngIf="mall?.centerhours">{{ "ABOUT_OUTLET_PAGE.STATIC_TEXT.HOURS" | translate }}</h6>
+    <p [innerHtml]="mall?.centerhours | safehtml"></p>
+    <h6>{{ "ABOUT_OUTLET_PAGE.STATIC_TEXT.CONNECTED" | translate }}</h6>
+    <ul>
+      <li>
+        <a href="{{mall?.facebookurl}}" target="_blank">
+          <img src="assets/images/fb.png" />
+        </a>
+      </li>
+      <li>
+        <a href="{{mall?.instagramurl}}" target="_blank">
+          <img src="assets/images/instagram.png" />
+        </a>
+      </li>
+    </ul>
+  </ion-card-content>
+  <figure no-margin>
+    <img src="{{mall?.featureimage}}" />
+  </figure>
+  <ion-card-content>
+    <h3>{{ "COMMON.STATIC_TEXT.ABOUT" | translate }} {{ "COMMON.STATIC_TEXT.US" | translate }}</h3>
+    <p [innerHtml]="mall?.description"></p>
+    
+      <a class="genNewBtn" href ="tel:{{mall?.tel}}">{{ "ABOUT_OUTLET_PAGE.BUTTONS.CALL_CENTER" | translate }}  {{mall?.tel}}</a>
+    
+      <a class="genNewBtn" href="mailto:{{mall?.mallemail}}?subject=Contact From Simon App">{{ "ABOUT_OUTLET_PAGE.BUTTONS.EMAIL_CENTER" | translate }}</a>
+    
+    <button ion-button block color="dark" margin-bottom (click)="getDirections(mall?.addressline)">{{ "ABOUT_OUTLET_PAGE.BUTTONS.DIRECTION" | translate }}</button>
+    <button ion-button block color="dark" margin-bottom (click)="shareSocial()">{{ "ABOUT_OUTLET_PAGE.BUTTONS.SHARE_CENTER" | translate }}</button>
+  </ion-card-content>
+</ion-content>

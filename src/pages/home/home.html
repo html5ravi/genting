@@ -1,0 +1,100 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-row>
+        <ion-col col-2>
+          <!-- <button *ngIf="auth_token" ion-button icon-only icon-left (click)="navTo('FullProfilePage')">
+          <ion-icon class="profile-icon" name="md-person" color="yellow"></ion-icon>
+        </button> -->
+        </ion-col>
+        <ion-col col-8>
+            <figure no-margin>
+                <img src="{{malllogo}}"/>
+              </figure>
+        </ion-col>
+        <ion-col col-2>
+            <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+        </ion-col>
+      </ion-row>
+    </ion-navbar>
+  </ion-header>
+  <!-- <header [canShowMenu]=true [showBackButton]=false [showProfileIcon]=auth_token?true:false></header> -->
+
+<ion-content no-padding no-bounce has-bouncing="false" overflow-scroll="false">
+  <!-- <section class="fixeHeight" style="min-height: 90vw;"> -->
+      <main-slider></main-slider>
+    <!-- <ion-slides *ngIf="homeBannerData.length > 0" pager="true" autoplay="5000" loop="true" speed="1000" class="static">
+      <ion-slide *ngFor="let banner of homeBannerData | sort:'priority'" (click)="navTo(banner)"> 
+        <section>
+          <figure no-margin >
+            <a *ngIf="banner?.linktype =='InAppLink'" href="#{{banner?.destination}}"><img [src]="banner?.bannerimage" /></a>
+            <a *ngIf="banner?.linktype =='None'"><img [src]="banner?.bannerimage" /></a>
+            <a *ngIf="banner?.linktype =='WebLink'" href="{{banner?.destination}}"><img [src]="banner?.bannerimage" /></a>
+          </figure>
+        </section>
+      </ion-slide>
+    </ion-slides> -->
+  <!-- </section> -->
+  <main-navs></main-navs>
+  <!-- <promotion-list></promotion-list> -->
+  <!-- <bottom-menu [pagename]="'HomePage'"></bottom-menu> -->
+
+  <article>
+    <section class="timePatch">
+      <strong>{{ "HOMEPAGE.STATIC_TEXT.OPEN" | translate }}</strong>
+    </section>
+  <ion-card-content>
+    <section class="promotionList">
+    <h3 text-uppercase class="pr" *ngIf="promotionList.length > 0">{{ "HOMEPAGE.STATIC_TEXT.STORES_AROUND" | translate }}</h3>
+    <ul>
+      <li  tappable *ngFor="let promo of promotionList" (click)="gotoPromotions(promo)">
+          <figure>
+              <img *ngIf="!promo?.bannerimage" [src]="promo?.associatedstore[0]?.brandimage" />
+            <img  *ngIf="promo?.bannerimage"[src]="promo?.bannerimage" />
+          </figure>
+          <section class="figcaption">
+              <h6>{{promo?.associatedstore[0]?.storename}}</h6>
+              <figcaption [innerHTML]="promo?.promotiondescription | safehtml">
+              </figcaption>
+          </section>
+         
+      </li>
+    </ul>
+  </section>
+
+    <ul class="second" *ngIf="promotionList.length <= 0">
+        <li class="dark chClr">
+          <a href="{{mall?.facebookurl}}" target="_blank">
+            <strong>
+                <p no-margin><span>{{mall?.mallname}}</span> <br /> {{ "HOMEPAGE.STATIC_TEXT.ON" | translate }} <br> {{ "HOMEPAGE.STATIC_TEXT.FACEBOOK" | translate }} <br> <a href="{{mall?.facebookurl}}" target="_blank" style="color:black">{{ "HOMEPAGE.STATIC_TEXT.LIKE_US" | translate }} </a></p>
+            </strong>
+          </a>
+        </li>
+        <li class="dark">
+          <a href="{{mall?.instagramurl}}" target="_blank">
+            <strong>
+                <p no-margin><span>{{mall?.mallname}}</span> <br> {{ "HOMEPAGE.STATIC_TEXT.ON" | translate }} <br> {{ "HOMEPAGE.STATIC_TEXT.INSTAGRAM" | translate }} <br> <a href="{{mall?.instagramurl}}" target="_blank">{{ "HOMEPAGE.STATIC_TEXT.LIKE_US" | translate }} </a>
+            </strong>
+          </a>
+        </li>
+      </ul>
+  </ion-card-content>
+</article>
+</ion-content>
+
+
+<mymodal #bluetooth title="Turn on Bluetooth" (closeClicked)="closeBluetoothModal()">
+  <ion-grid>
+    <div>
+        <p text-center>{{ "MODALS.STATIC_TEXT.BLUETOOTH_1" | translate }} <ion-icon ios="ios-bluetooth" md="md-bluetooth"></ion-icon> {{ "MODALS.STATIC_TEXT.BLUETOOTH_2" | translate }}”</p>
+  </div>
+      <ion-row>
+          <ion-col col-12>
+              <button ion-button color="dark" (click)="openBluetoothSettings()">
+                {{ "MODALS.BUTTONS.SETTINGS" | translate }}</button>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</mymodal>

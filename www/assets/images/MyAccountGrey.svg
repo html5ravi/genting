@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="36" viewBox="0 0 50 36">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#4b4b4b"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_10_copy" data-name="Group 10 copy" class="cls-1">
+    <rect id="Rounded_Rectangle_537" data-name="Rounded Rectangle 537" class="cls-2" x="1" y="1" width="48" height="34" rx="2" ry="2"/>
+    <path id="Forma_1" data-name="Forma 1" class="cls-3" d="M275.475,80.429a4.72,4.72,0,1,0-4.453-4.719A4.592,4.592,0,0,0,275.475,80.429Zm0-8.194a3.48,3.48,0,1,1-3.279,3.474A3.39,3.39,0,0,1,275.475,72.235ZM266.625,89h17.754a0.653,0.653,0,0,0,.629-0.683,6.264,6.264,0,0,0-5.985-6.5h-7.042a6.264,6.264,0,0,0-5.986,6.5A0.653,0.653,0,0,0,266.625,89Zm5.356-5.813h7.042a4.873,4.873,0,0,1,4.683,4.447H267.3A4.886,4.886,0,0,1,271.981,83.184Z" transform="translate(-260 -60)"/>
+    <rect class="cls-4" x="26.594" y="7.375" width="17.562" height="2.344"/>
+    <rect id="Rectangle_539_copy" data-name="Rectangle 539 copy" class="cls-4" x="26.594" y="13.25" width="17.562" height="2.313"/>
+    <rect id="Rectangle_539_copy_2" data-name="Rectangle 539 copy 2" class="cls-4" x="26.594" y="10.906" width="17.562" height="1.156"/>
+  </g>
+</svg>

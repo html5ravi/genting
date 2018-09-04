@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+      <figure no-margin>
+        <img src="assets/images/outerlogo.svg" />
+      </figure>
+    </ion-navbar>
+  </ion-header>
+  <!-- <header [canShowMenu]=false [showBackButton]=false></header> -->
+
+
+
+<ion-content no-padding no-bounce>
+  <article padding class="head">
+    <h2>{{ "SELECT_OUTLET_PAGE.STATIC_TEXT.CHOOSE" | translate }} <span>{{ "SELECT_OUTLET_PAGE.STATIC_TEXT.CENTER" | translate }}</span></h2>
+  </article>
+  <ion-card-content no-padding margin-bottom *ngFor="let mall of _chooseMall; let i=index;" (click)="selectMall(mall)" >
+    <img  [src]="mall?.featureimage" />
+    <article>
+      <h3>{{mall?.mallname}}</h3>
+    </article>
+  </ion-card-content>
+</ion-content>
+
+<section class="confirm">
+      <mymodal #checkCartModal class="modal" title="Alert">
+            <p no-margin text-center>Your bag contains items from other center. Do you want to discard the selection and add items from other center? </p>
+              <ion-row>
+                <ion-col>
+                    <button ion-button block outline color="dark" margin-top (click)="closeMdl()">
+                        CANCEL</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button block outline color="dark" margin-top style="color:#fff;background:#000" (click)="emptyCart()">
+                        OK</button>
+                </ion-col>
+              </ion-row>
+      </mymodal>
+</section>

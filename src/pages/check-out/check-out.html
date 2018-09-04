@@ -1,0 +1,372 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-2>
+                <ion-icon name="arrow-back" (click)="gotoPage('MyBagPage')" class="arrowBack"></ion-icon>
+            </ion-col>
+            <ion-col col-8>
+                <strong *ngIf="orderStatus" style="top: 22px;">Check out</strong>
+                <strong *ngIf="!orderStatus" style="top: 22px;">ORDER FAILED</strong>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+    <section *ngIf="orderStatus">
+        <ion-card padding>
+            <ion-segment [(ngModel)]="checkout">
+                <ion-segment-button value="Pickup" [disabled]="true">
+                    <strong> </strong>
+                </ion-segment-button>
+                <ion-segment-button value="Payment" [disabled]="true">
+                    <strong> </strong>
+                </ion-segment-button>
+                <ion-segment-button value="Done" [disabled]="true">
+                    <strong> </strong>
+                </ion-segment-button>
+            </ion-segment>
+            <hr class="line1" />
+            <hr class="line2" />
+            <ion-grid no-padding class="textApply">
+                <ion-row>
+                    <ion-col text-center>
+                        <span>Pick-Up</span>
+                    </ion-col>
+                    <ion-col text-center>
+                        <span>Payment</span>
+                    </ion-col>
+                    <ion-col text-center>
+                        <span>Done</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+        <section [ngSwitch]="checkout" style="position: relative;">
+            <ion-list *ngSwitchCase="'Pickup'">
+                <ion-item>
+                    <ion-card padding>
+                        <h5>Pick-Up at Center</h5>
+                        <button ion-button style="font-size: 14px !important" block color="secondary">{{ userdataProvider.selectedMall
+                            }}
+                        </button>
+                        <h5 style="margin-top: 15px;">Pick-Up date</h5>
+                        <article style="margin-bottom: 15px;" class="date">
+                            <ion-row>
+                                <ion-col>
+                                    <strong *ngIf="!deliveryDate">Choose a future date</strong>
+                                    <strong *ngIf="deliveryDate">{{ deliveryDate }}</strong>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <ion-icon name="calendar" (click)="openCalender()"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                        </article>
+                        <small>Please pick-up your items within operating hours.</small>
+                        <small class="bold">All centers open from 10 AM to 10 PM from Monday to Sunday</small>
+                    </ion-card>
+                    <section class="userDetail">
+                        <section class="Profiledetail">
+                            <ion-row>
+                                <ion-col>
+                                    <strong>my details</strong>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <ion-icon name="create" *ngIf="!isUserData" (click)="editUserData('user')"></ion-icon>
+                                    <ion-icon style="margin: 0" *ngIf="!editGroup && isUserData " color="success" item-right name="add-circle" (click)="toggleEdit()"></ion-icon>
+                                    <ion-icon style="margin: 0" *ngIf="editGroup && isUserData" color="success" item-right name="remove-circle" (click)="toggleEdit()"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                            <ul *ngIf="!isUserData && editUserUpdate.value.editUserFname == ''">
+                                <li *ngIf="userdata?.firstName">{{ userdata?.firstName }} {{ userdata?.lastName }}</li>
+                                <li *ngIf="!userdata?.firstName">Name</li>
+                                <li *ngIf="userdata?.mobile">{{ userdata?.mobile }}</li>
+                                <li *ngIf="!userdata?.mobile">Mobile Number</li>
+                                <li *ngIf="userEmail">{{ userEmail }}</li>
+                                <li *ngIf="!userEmail">Email Id</li>
+                            </ul>
+                            <ul *ngIf="!isUserData && editUserUpdate.value.editUserFname != ''">
+                                <li>{{ editUserUpdate.value.editUserFname }} {{ editUserUpdate.value.editUserLname }}</li>
+                                <!-- <li>{{ editUserUpdate.value.editUserLname }}</li> -->
+                                <li>{{ editUserUpdate.value.editUserMobnum }}</li>
+                                <li>{{ editUserUpdate.value.editUserEmail }}</li>
+                            </ul>
+                        </section>
+                        <section *ngIf="isUserData">
+
+                            <article class="insideData" *ngIf="editGroup">
+                                <form [formGroup]="editUserUpdate" (ngSubmit)="changeUserData()">
+                                    <ion-list>
+                                        <section *ngIf="editUserFname.touched && editUserFname.hasError('whitespace')  || editUserFname.hasError('pattern')" item-left>
+                                            <p class="error" text-left>*Enter valid First Name</p>
+                                        </section>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="First Name" formControlName="editUserFname">{{userdata?.firstName}}</ion-input>
+                                        </ion-item>
+                                        <section *ngIf="editUserLname.touched && editUserLname.hasError('whitespace')  || editUserLname.hasError('pattern')" item-left>
+                                            <p class="error" text-left>*Enter valid Last Name</p>
+                                        </section>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="Last Name" formControlName="editUserLname"></ion-input>
+                                        </ion-item>
+                                        <section *ngIf="editUserMobnum?.hasError('required') && editUserMobnum?.touched" item-left>
+                                            <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_MOBILE_NO"
+                                                | translate }}</p>
+                                        </section>
+                                        <ion-item>
+                                            <ion-input type="number" placeholder="Contact Number" formControlName="editUserMobnum"></ion-input>
+                                        </ion-item>
+                                        <section *ngIf="editUserEmail?.hasError('required') && editUserEmail?.touched" item-left>
+                                            <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_EMAIL" | translate
+                                                }}
+                                            </p>
+                                        </section>
+                                        <section *ngIf="editUserEmail?.hasError('pattern')" item-left>
+                                            <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_VALID_EMAIL"
+                                                | translate }}</p>
+                                        </section>
+                                        <ion-item>
+                                            <ion-input type="email" placeholder="Email" formControlName="editUserEmail"></ion-input>
+                                        </ion-item>
+                                    </ion-list>
+                                    <button ion-button color="dark" outline [disabled]="!editUserUpdate.valid" type="submit">add</button>
+                                </form>
+                            </article>
+                        </section>
+                        <ion-list *ngIf="!isAlternateData">
+                            <ion-item text-wrap>
+                                <h3>
+                                    <span>AUTHORISED PICK-UP PERSON</span>
+                                    <ion-icon *ngIf="!shownGroup" color="success" item-right name="add-circle" (click)="toggleGroup(shownGroup)"></ion-icon>
+                                    <ion-icon *ngIf="shownGroup" color="success" item-right name="remove-circle" (click)="toggleGroup(shownGroup)"></ion-icon>
+                                </h3>
+                                <article class="insideData" *ngIf="shownGroup">
+                                    <form [formGroup]="alternatepickupData" (ngSubmit)="addAlternateData()">
+                                        <ion-list>
+                                            <section *ngIf="alternateUserFname.touched && alternateUserFname.hasError('whitespace')  || alternateUserFname.hasError('pattern')"
+                                                item-left>
+                                                <p class="error" text-left>*Enter valid First Name</p>
+                                            </section>
+                                            <ion-item>
+                                                <ion-input type="text" placeholder="First Name" formControlName="alternateUserFname"></ion-input>
+                                            </ion-item>
+                                            <section *ngIf="alternateUserLname.touched && alternateUserLname.hasError('whitespace')  || alternateUserLname.hasError('pattern')"
+                                                item-left>
+                                                <p class="error" text-left>*Enter valid Last Name</p>
+                                            </section>
+                                            <ion-item>
+                                                <ion-input type="text" placeholder="Last Name" formControlName="alternateUserLname"></ion-input>
+                                            </ion-item>
+                                            <section *ngIf="alternateUserIcNo?.hasError('required') && alternateUserIcNo?.touched" item-left>
+                                                <p class="error" text-left>*Enter valid IC Number</p>
+                                            </section>
+                                            <ion-item>
+                                                <ion-input type="text" placeholder="IC / Passport Number" formControlName="alternateUserIcNo"></ion-input>
+                                            </ion-item>
+                                            <section *ngIf="alternateUserMobNum?.hasError('required') && alternateUserMobNum?.touched" item-left>
+                                                <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_MOBILE_NO"
+                                                    | translate }}</p>
+                                            </section>
+                                            <ion-item>
+                                                <ion-input type="number" placeholder="Contact Number" formControlName="alternateUserMobNum"></ion-input>
+                                            </ion-item>
+                                            <section *ngIf="alternateUserEmail?.hasError('required') && alternateUserEmail?.touched" item-left>
+                                                <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_EMAIL"
+                                                    | translate }}</p>
+                                            </section>
+                                            <section *ngIf="alternateUserEmail?.hasError('pattern')" item-left>
+                                                <p class="error" text-left>*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_VALID_EMAIL"
+                                                    | translate }}</p>
+                                            </section>
+                                            <ion-item>
+                                                <ion-input type="email" placeholder="Email" formControlName="alternateUserEmail"></ion-input>
+                                            </ion-item>
+                                        </ion-list>
+                                        <small>
+                                            You and authorised pick-up person will receive notification email and SMS when your item is available for pick-up
+                                        </small>
+                                        <button ion-button color="dark" [disabled]=!alternatepickupData.valid outline type="submit">add</button>
+                                    </form>
+                                </article>
+                            </ion-item>
+                        </ion-list>
+                        <section class="Profiledetail" *ngIf="isAlternateData">
+                            <ion-row>
+                                <ion-col>
+                                    <strong>Authorised pick-up person</strong>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <ion-icon name="create" (click)="editUserData('alternate')"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                            <ul>
+                                <li>{{ alternatepickupData?.value.alternateUserFname }} {{ alternatepickupData?.value.alternateUserLname
+                                    }}
+                                </li>
+                                <!-- <li>{{ alternatepickupData?.value.alternateUserLname }}</li> -->
+                                <li>{{ alternatepickupData?.value.alternateUserIcNo }}</li>
+                                <li>{{ alternatepickupData?.value.alternateUserMobNum }}</li>
+                                <li>{{ alternatepickupData?.value.alternateUserEmail }}</li>
+                            </ul>
+                        </section>
+                    </section>
+                    <ion-row>
+                        <ion-col text-center>
+                            <input type="checkbox" [(ngModel)]="isPrivacy">
+                            <label>
+                                I Agree to the
+                                <a href="javascript:;" (click)="goTo('terms')">Terms & Conditions</a>
+                                , and
+                                <a href="javascript:;" (click)="goTo('privacy')">Privacy Policy</a>
+                            </label>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+                <ion-card padding>
+                    <article class="bottomButton">
+                        <button ion-button margin-bottom outline block color="dark" (click)="goTo('pop')">back to my bag</button>
+                        <button ion-button block color="dark" [disabled]="!isPrivacy" (click)="getPaymentOptions()">continue
+                            to payment</button>
+                    </article>
+                </ion-card>
+            </ion-list>
+            <ion-list *ngSwitchCase="'Payment'">
+                <ion-item>
+                    <article class="total">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <span text-uppercase>total</span>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <h4>MYR {{ orderTotal | decimal }}</h4>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </article>
+                    <section class="userDetail">
+                        <h2 *ngFor="let payment of paymentMode;">
+                            <section>
+                                <strong (click)="makePayment(payment)">{{ payment.GatewayTitle }}</strong>
+                            </section>
+                        </h2>
+                        <!-- <ion-list>
+                            <ion-item *ngFor="let pay of payment; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+                                <h3>
+                                    <span>{{pay.name}}</span>
+                                    <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'ios-arrow-down' : 'ios-arrow-up'"></ion-icon>
+                                </h3>
+                                <article class="insideData" *ngIf="isGroupShown(i)">
+                                    <form>
+                                        <ion-item style="border: 1px solid #000 !important;">
+                                            <label style="padding-left: 5px;">Select your Bank</label>
+                                            <ion-select [(ngModel)]="toppings1" name="toppings1" >
+                                                <ion-option>Bacon</ion-option>
+                                                <ion-option>Black Olives</ion-option>
+                                                <ion-option>Extra Cheese</ion-option>
+                                                <ion-option>Mushrooms</ion-option>
+                                                <ion-option>Pepperoni</ion-option>
+                                                <ion-option>Sausage</ion-option>
+                                            </ion-select>
+                                        </ion-item>
+                                        <button ion-button block color="dark" style="width:100% !important;">Pay now</button>
+                                        <p>
+                                            After order confirmation you will be redirect to a secure payment system. Login with your credentials to make payment
+                                        </p>
+                                        
+                                    </form>
+                                </article>
+                            </ion-item>
+                        </ion-list>
+                        <ion-list>
+                            <ion-item *ngFor="let pay1 of payment1; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+                                <h3>
+                                    <span>{{pay1.name}}</span>
+                                    <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'ios-arrow-down' : 'ios-arrow-up'"></ion-icon>
+                                </h3>
+                                <article class="insideData" *ngIf="isGroupShown(i)">
+                                    <form>
+                                        <ion-list>
+                                            <ion-item style="border: 1px solid #000 !important;">
+                                                <ion-label style="padding-left: 5px;">Select your Bank</ion-label>
+                                                <ion-select [(ngModel)]="toppings" name="toppings">
+                                                    <ion-option>Bacon</ion-option>
+                                                    <ion-option>Black Olives</ion-option>
+                                                    <ion-option>Extra Cheese</ion-option>
+                                                    <ion-option>Mushrooms</ion-option>
+                                                    <ion-option>Pepperoni</ion-option>
+                                                    <ion-option>Sausage</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </ion-list>
+                                        <button ion-button block color="dark" style="width:100% !important;">Pay now</button>
+                                        <p>
+                                            After order confirmation you will be redirect to a secure payment system. Login with your credentials to make payment
+                                        </p>
+                                        
+                                    </form>
+                                </article>
+                            </ion-item>
+                        </ion-list> -->
+                    </section>
+                </ion-item>
+            </ion-list>
+            <ion-list *ngSwitchCase="'Done'">
+                <ion-item>
+                    <section padding class="orderConfirm">
+                        <article>
+                            <h3>Congratulations {{ orderInfo?.BillFirstname }} {{ orderInfo?.BillLastname }},</h3>
+                            <p>Thank you for shopping with us. <br/> Your order is confirmed
+                            </p>
+                            <h4>ORDER NUMBER: <strong>{{ orderInfo?.OrderId }}</strong></h4>
+                            <small>Please collect your purchased item at our center</small>
+                            <h2>{{ mallName }}<br /> {{ orderInfo?.DemandedDeliveryDate }} </h2>
+                        </article>
+                    </section>
+                    <section class="userDetail">
+                        <section class="Profiledetail">
+                            <ion-row class="customRow">
+                                <ion-col>
+                                    <strong>MY DETAIL</strong>
+                                </ion-col>
+                            </ion-row>
+                            <ul>
+                                <li>{{ orderInfo?.BillFirstname }} {{ orderInfo?.BillLastname }}</li>
+                                <li>{{ orderInfo?.BillMobile }}</li>
+                                <li>{{ orderInfo?.BillEmail }}</li>
+                            </ul>
+                        </section>
+                        <section class="Profiledetail" *ngIf="orderInfo?.PickupFirstName != ''">
+                            <ion-row>
+                                <ion-col>
+                                    <strong>AUTHORIZED PICK-UP PERSON</strong>
+                                </ion-col>
+                            </ion-row>
+                            <ul>
+                                <li>{{ orderInfo?.PickupFirstName }} {{ orderInfo?.PickupLastName }}</li>
+                                <!-- <li>{{ orderInfo?.OrderId }}</li> -->
+                                <li>{{ orderInfo?.PickupMobile }}</li>
+                                <li>{{ orderInfo?.PickupEmail }}</li>
+                            </ul>
+                        </section>
+                    </section>
+                    <ion-card padding>
+                        <article class="bottomButton">
+                            <!-- <button ion-button margin-bottom outline block color="dark">VIEW INVOICE</button> -->
+                            <button ion-button block color="dark" (click)="gotoPage('PurchasedItemsPage')">VIEW PURCHASED
+                                ITEMS
+                            </button>
+                            <button ion-button block color="dark" (click)="gotoPage('ShopPage')">Shop More</button>
+                        </article>
+                    </ion-card>
+                </ion-item>
+            </ion-list>
+        </section>
+    </section>
+    <section *ngIf="!orderStatus">
+        <article class="emptyCart">
+            <p>Sorry we were unable to process your payment. Please go back to checkout.</p>
+            <button ion-button block (click)="gotoPage('MyBagPage')">Back to Checkout</button>
+        </article>
+    </section>
+</ion-content>

@@ -1,0 +1,32 @@
+<section>
+      <ul class="bottomMenu">
+            <li  (click)="goto('HomePage')" class="home" [ngClass]="pageName != 'HomePage'?'nonActive':'active'">
+                  <img *ngIf="pageName == 'HomePage'" src="assets/images/Home.svg">
+                  <img *ngIf="pageName != 'HomePage'" src="assets/images/HomeGrey.svg">
+                  <p>Home</p>
+            </li>
+            <li  (click)="goto('ShopPage')" class="shop" [ngClass]="pageName != 'ShopPage'?'nonActive':'active'">
+                  <img *ngIf="pageName == 'ShopPage'" src="assets/images/Shop.svg">
+                  <img *ngIf="pageName != 'ShopPage'" src="assets/images/ShopGrey.svg">
+                  <p>Shop</p>
+            </li>
+            <li  (click)="goto('SearchPage')" [ngClass]="pageName != 'SearchPage'?'nonActive':'active'">
+                  <img *ngIf="pageName == 'SearchPage'" src="assets/images/search.svg">
+                  <img *ngIf="pageName != 'SearchPage'" src="assets/images/SearchGrey.svg">
+                  <p>Search</p>
+            </li>
+            <li (click)="goto('MyBagPage')" class="myBag" [ngClass]="pageName != 'MyBagPage'?'nonActive':'active'">        
+                  <div class="cartOut">
+                              <img *ngIf="pageName == 'MyBagPage'" src="assets/images/Bag.svg">
+                              <img *ngIf="pageName != 'MyBagPage'" src="assets/images/BagGrey.svg">
+                                <span *ngIf ="cartProvider.getCartItemQuantity()!=0">{{cartProvider.getCartItemQuantity()}}</span>
+                                <p>My Bag</p>
+                        </div>                      
+                  </li>
+            <li (click)="goto('MyAccountPage')" class="myAccount" [ngClass]="pageName != 'MyAccountPage'?'nonActive':'active'">
+                  <img *ngIf="pageName == 'MyAccountPage'" src="assets/images/MyAccount.svg">
+                  <img *ngIf="pageName != 'MyAccountPage'" src="assets/images/MyAccountGrey.svg">
+                  <p>Account</p>
+            </li>
+      </ul>
+</section>

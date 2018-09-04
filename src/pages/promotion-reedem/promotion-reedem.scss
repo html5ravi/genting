@@ -1,0 +1,65 @@
+page-promotion-reedem {
+    ion-navbar{
+        button{
+            margin: 5px 0 0 5px !important;
+            position: static;
+        }
+        strong{
+            height: 35px;
+            width: 35px;
+            border: 4px solid #fbca01;
+            border-radius: 50%;
+            display: block;
+            margin: 4px 0 0 10px;
+            span{
+                color: $default;
+                font-size: 12px;
+                display: block;
+                margin: 6px 0 0 0;
+                text-align: center;
+            }
+        }
+    }
+    h3{
+        font-size: 20px !important;
+        text-transform: none;
+        line-height: 28px !important;
+        padding-bottom: 5px;
+        margin: 0;
+    }
+    p{
+        font-size: 14px !important;
+        margin: 0 0 10px 0;
+    }
+    article{
+        padding: 15px;
+        border:1px solid $secondary;;
+    }
+    span{
+        display: block;
+    }
+    h4{
+        text-transform: uppercase;
+        color: $secondary;;
+        font-size: 20px;
+        margin: 0 0 5px 0;
+        letter-spacing: -1px;
+    }
+    .bar{
+        display: block;
+        height: 2px;
+        background: #ccc;
+        margin: 15px 0;
+    }
+    h2{
+        margin: 0;
+        text-align: center;
+    }
+    .closeBtn{
+        position: static;
+        margin: 10% 0 0 0;
+    }
+    .red{
+        color:red;
+    }
+}

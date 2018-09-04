@@ -1,0 +1,110 @@
+<ion-header>
+      <ion-navbar>
+            <ion-row>
+                  <ion-col col-2>
+                        <!-- <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon> -->
+                  </ion-col>
+                  <ion-col col-8>
+                        <figure no-margin>
+                              <strong>MY ACCOUNT</strong>
+                        </figure>
+                  </ion-col>
+                  <ion-col col-2>
+                        <button ion-button icon-only menuToggle>
+                              <ion-icon tappable name="menu"></ion-icon>
+                        </button>
+                  </ion-col>
+            </ion-row>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content *ngIf="!guestUser" no-padding>
+      <ion-card>
+            <ion-card-header padding>
+                  <ion-grid no-padding>
+                        <ion-row>
+                              <ion-col col-8>
+                                    <ion-icon name="ios-contact"></ion-icon>
+                                    <strong>My details</strong>
+                              </ion-col>
+                              <ion-col col-4>
+                                    <button ion-button no-margin block color="dark" style="padding: 0 !important" (click)="gotoPage('FullProfilePage')">edit</button>
+                              </ion-col>
+                        </ion-row>
+                  </ion-grid>
+            </ion-card-header>
+            <ion-card-content padding>
+                  <p>
+                        <strong>Name :</strong>
+                        <span> {{ userProfileData?.FirstName }} {{ userProfileData?.LastName }} </span>
+                  </p>
+                  <p>
+                        <strong>Email :</strong>
+                        <span> {{ userProfileData?.UserName }} </span>
+                  </p>
+                  <p *ngIf = "userProfileData?.MobileNo" >
+                        <strong>Mobile Number :</strong>
+                        <span> {{ userProfileData?.MobileNo }} </span>
+                  </p>
+            </ion-card-content>
+      </ion-card>
+      <ion-card>
+            <ion-card-header padding>
+                  <ion-grid no-padding>
+                        <ion-row>
+                              <ion-col col-8>
+                                    <ion-icon name="person"></ion-icon>
+                                    <strong>Account information</strong>
+                              </ion-col>
+                        </ion-row>
+                  </ion-grid>
+            </ion-card-header>
+            <ion-card-content padding>
+                  <ion-grid no-padding>
+                        <ion-row (click)="gotoPage('OrderHistoryPage')">
+                              <ion-col col-8>
+                                    <p style="margin: 0 !important">
+                                          <span> My Order History </span>
+                                    </p>
+                              </ion-col>
+                              <ion-col col-4 icon-end>
+                                    <p style="position: relative;">
+                                          <span>
+                                                <ion-icon style="position: absolute;right: 0;top:5px;" item-end name="ios-arrow-forward"></ion-icon>
+                                          </span>
+                                    </p>
+                              </ion-col>
+                        </ion-row>
+                  </ion-grid>
+            </ion-card-content>
+      </ion-card>
+      <ion-card class="mb40">
+            <ion-card-header padding>
+                  <ion-grid no-padding>
+                        <ion-row (click)="gotoPage('ChangePasswordPage')">
+                              <ion-col col-8>
+                                    <ion-icon name="ios-lock-outline"></ion-icon>
+                                    <strong>Change Password</strong>
+                              </ion-col>
+                        </ion-row>
+                  </ion-grid>
+            </ion-card-header>
+      </ion-card>
+
+      
+</ion-content>
+<ion-content *ngIf="guestUser">
+
+      <section class="guestUserDetails">
+            <h3>Welcome guest user, please login to continue</h3>
+            <button ion-button block color="secondary" (click)="goBack()">Login to continue</button>
+      </section>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <bottom-menu [pagename]="'MyAccountPage'"></bottom-menu>
+  </ion-toolbar>
+</ion-footer>

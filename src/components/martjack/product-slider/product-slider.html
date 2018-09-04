@@ -1,0 +1,17 @@
+<ion-icon class="arrowBack" (click)="goBack()" name="arrow-back"></ion-icon>
+
+<ion-slides pager="true" autoplay="5000" loop="true" speed="1000" *ngIf="sliderImage?.length > 1">
+  <ion-slide *ngFor = "let images of sliderImage; let i =index;">
+    <figure>
+      <img src="http:{{ images?.LargeImage }}" (click)="navToViewImage(i)" />
+    </figure>
+  </ion-slide>
+</ion-slides>
+
+<ion-slides *ngIf="sliderImage?.length == 1">
+    <ion-slide>
+      <figure>
+        <img src="http:{{ sliderImage[0]?.LargeImage }}" (click)="navToViewImage(0)"/>
+      </figure>
+    </ion-slide>
+  </ion-slides> 

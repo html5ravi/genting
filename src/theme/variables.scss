@@ -1,0 +1,122 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+
+$colors: (
+  primary:    #000,
+  secondary:  #9f295a,
+  danger:     #007aff,
+  dark:       #000,
+  dark-x:     #333,
+  light-x:    #9b9b9b,
+  light-xx:   #4a4a4a,
+  default:    #fff,
+  yellow:     #fbca01,
+  red:       #f00
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+    
+$menu-md-background: transparent;
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+// @import "simon-circular-book";
+// @import "simon-circular-bold";
+
+@font-face {
+  font-family:'Simon Circular Bold';
+  src: url('../assets/fonts/Simon Circular Bold.eot');
+  src: url('../assets/fonts/Simon Circular Bold.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/Simon Circular Bold.woff2') format('woff2'),
+  url('../assets/fonts/Simon Circular Bold.woff') format('woff'),
+  url('../assets/fonts/Simon Circular Bold.svg#Simon Circular Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+@font-face {
+  font-family:'Simon Circular Book';
+  src: url('../assets/fonts/Simon Circular Book.eot');
+  src: url('../assets/fonts/Simon Circular Book.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/Simon Circular Book.woff2') format('woff2'),
+  url('../assets/fonts/Simon Circular Book.woff') format('woff'),
+  url('../assets/fonts/Simon Circular Book.svg#Simon Circular Book') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE; 
+}

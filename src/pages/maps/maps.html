@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon *ngIf="!hideBackButton" name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+<!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+
+
+
+<ion-content class="main">
+    <div class="searchbar">
+        <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" (ionClear)="onCancel($event)">
+        </ion-searchbar>
+        <ion-list *ngIf="filteredList.length > 0">
+            <ion-item *ngFor="let f of filteredList" (click)="selectedLocation(f)">{{f.name}}</ion-item>
+        </ion-list>
+    </div>
+    <div id="mallmap" class="spur-fullscreen"></div>
+</ion-content>
+
+
+<mymodal #bluetooth title="Turn on Bluetooth" (closeClicked)="closeBluetoothModal()">
+    <ion-grid>
+        <div>
+            <p text-center>{{ "MODALS.STATIC_TEXT.BLUETOOTH_1" | translate }}
+                <ion-icon ios="ios-bluetooth" md="md-bluetooth"></ion-icon> {{ "MODALS.STATIC_TEXT.BLUETOOTH_2" | translate }}”</p>
+        </div>
+        <ion-row>
+            <ion-col col-12>
+                <button ion-button color="dark" (click)="openBluetoothSettings()">{{ "MODALS.BUTTONS.SETTINGS" | translate }}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</mymodal>

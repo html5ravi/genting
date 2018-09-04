@@ -1,0 +1,84 @@
+page-filters {
+    ion-card-header{
+        font-size: 1.6rem;
+        color: #222;
+        padding: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+    .commonSort{
+        padding: 15px 0 15px 15px !important;
+        border-bottom: 1px solid #ccc;
+    }
+    ion-card-content{
+        padding: 0 !important;
+    }
+    ion-list{
+        margin: 0 !important;
+        width: 100%;
+        padding-left:0 !important;
+        ion-item{
+            padding-left:30px !important;
+            border-bottom: 1px solid #ccc !important;
+        }
+        .item-inner{
+            padding-right:0 !important;
+        }
+    }
+    .range-knob{
+        border-radius: 0 !important;
+    }
+    .Viewbutton{
+    margin: 0;
+    height: 60px;
+    border-radius: 0;
+    }
+    .check{
+        color: #aaa;
+        position: absolute;
+        right: 15px;
+    }
+    ion-range{
+        ion-label{
+            margin-top: -30px !important;
+        }
+    }
+    .range{
+        position: relative !important;
+        padding: 7px !important;
+        ion-label{
+            font-size: 12px !important;
+        }
+        .range-ios .range-knob,
+        .range-md .range-knob {
+            left: 7px;
+            top: 15px;
+            width: 15px;
+            height: 15px;
+            background: #141414;
+        }
+        .range-ios .range-bar,
+        .range-md .range-bar {
+            left: 0;
+            top: 21px;
+            border-radius: 1px;
+            position: absolute;
+            height: 4px;
+            pointer-events: none;
+        }
+        .left{
+            position: absolute;
+            left:7px;
+            bottom: 40px;
+        }
+        .right{
+            position: absolute;
+            right:7px;
+            bottom: 40px;
+        }
+        .range-slider{
+            margin: 0 0 0 15px;
+        }
+    }
+}

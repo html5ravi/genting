@@ -1,0 +1,97 @@
+page-aminites {
+    ion-navbar{
+        button{
+            margin: 5px 0 0 5px !important;
+        }
+        strong{
+            height: 35px;
+            width: 35px;
+            border: 4px solid #fbca01;
+            border-radius: 50%;
+            display: block;
+            margin: 4px 0 0 10px;
+            span{
+                color: $default;
+                font-size: 12px;
+                display: block;
+                margin: 6px 0 0 0;
+                text-align: center;
+            }
+        }
+    }
+    ion-content{
+        figure{
+            img{
+                width:100%;
+            }
+        }
+    }
+    figcaption{
+        background: $dark;
+        padding: 10px 15px;
+        h3{
+            font-size: 8vw;
+            margin: 0;
+            color: $secondary;
+            text-transform: uppercase;
+            line-height: 23px;
+            strong{
+                color:$default;
+                display: block;
+            }
+        }
+    }
+    ion-list{
+        ion-item{
+            padding:0 !important;
+            .item-inner{
+                border-bottom: 1px solid $dark-x;
+                border-top:0 !important;
+                padding: 10px 15px !important;
+            }
+            ion-label{
+                margin: 0 !important;
+            }
+        }
+        ion-icon{
+            position: absolute;
+            right: 0;
+            top: 10px;
+            right: 7px;
+            font-size: 20px;
+        }
+        h3{
+            font-weight: bold !important;
+            font-size: 15px !important;
+            span{
+                position: relative;
+                top: -5px;
+            }
+            img{
+                height: 30px;
+                width: 30px;
+                display: inline-block;
+                margin: 0px 5px 0 0;
+                position: relative;
+                top: 5px;
+            }
+        }
+        article{
+            margin: 10px 0 0 0;
+        }
+    }
+    .fixedHeight{
+        height: auto;
+        position: relative;
+        img{
+            height: 100%;
+        }
+        figcaption{
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 15px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}

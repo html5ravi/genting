@@ -1,0 +1,55 @@
+page-email-login {
+    .back-button.show-back-button {
+        position: absolute;
+        z-index: 9999;
+    }
+    figure.marginAdj{
+        margin: -15px -16px 15px -16px;
+        img{
+            width: 100%;
+        }
+    }
+    h3{
+        font-size: 20px !important;
+        text-transform: uppercase;
+        line-height: 28px !important;
+        padding-bottom: 5px;
+    }
+    p{
+        font-size: 14px !important;
+    }
+    ion-checkbox{
+        margin:0 15px 0 0 !important;
+    }
+    ion-item{
+        font-size: 14px !important;
+        .item-inner{
+            border-bottom: 0 !important;
+            padding: 0 !important;
+            input{
+                margin: 5px 0 !important;
+                padding-left: 10px !important;
+            }
+        }
+        ion-input{
+            height: 35px;
+            border:1px solid $dark-x;
+        } 
+    }
+    .item-input:last-child{
+        border-bottom: 0 !important;   
+    }
+    form{
+        ion-card-content{
+            border: 1px solid $secondary;;
+        }
+    }
+    ion-content{
+        button{
+            margin-top: 40% !important;
+        }
+    }
+    ion-item p{
+        color:red !important;
+    }
+}

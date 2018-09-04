@@ -1,0 +1,38 @@
+<ion-card no-margin no-padding *ngIf = "productDisplay?.Inventory > 0">
+  <figure>
+    <img *ngIf="productDisplay?.LargeImage" src="http:{{ productDisplay?.LargeImage }}" />
+    <img *ngIf="!productDisplay?.LargeImage" src="assets/images/gentingLogo.png" />
+  </figure>
+  <ion-card-content>
+    <h6>{{ productDisplay?.Brand }}</h6>
+    <p>{{ productDisplay?.Title }}</p>
+    <ion-row>
+      <ion-col col-12>
+        <del *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</del> 
+        <strong *ngIf="productDisplay?.MRP <= productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</strong>
+        <strong *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.WebPrice }}</strong>
+        <b *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">save {{ productDisplay?.Discount }}%</b>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card no-margin no-padding *ngIf = "productDisplay?.Inventory <= 0">
+<figure>
+  <img *ngIf="productDisplay?.LargeImage" src="http:{{ productDisplay?.LargeImage }}" />
+    <img *ngIf="!productDisplay?.LargeImage" src="assets/images/gentingLogo.png" />
+    <h6 class="outofStock">Out Of Stock</h6>
+</figure>
+<ion-card-content>
+  <h6>{{ productDisplay?.Brand }}</h6>
+  <p>{{ productDisplay?.Title }}</p>
+  <ion-row>
+    <ion-col col-12>
+      <del *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</del> 
+      <strong *ngIf="productDisplay?.MRP <= productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</strong>
+      <strong *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.WebPrice }}</strong>
+      <b *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">save {{ productDisplay?.Discount }}%</b>
+    </ion-col>
+  </ion-row>
+</ion-card-content>
+</ion-card>

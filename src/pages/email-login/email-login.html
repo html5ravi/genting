@@ -1,0 +1,29 @@
+
+
+  <header [canShowMenu]=false [showBackButton]=true></header>
+
+<ion-content padding no-bounce has-bouncing="false">
+  <figure no-margin class="marginAdj">
+      <img src="assets/images/VIP-Lounge-1-Page.jpg" />
+    </figure>
+    <form [formGroup]="emailLoginForm" (ngSubmit)="verifyEmail()">
+      <ion-card-header no-padding padding-left padding-right>
+        <h3 no-margin class="bb">{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.VERIFY_EMAIL_ADD" | translate}}</h3>
+          <h6 no-margin margin-top>{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.EMAIL_ADD" | translate}}</h6>
+          <ion-item no-padding>
+            <ion-input type="email" [(ngModel)]="_useremail" name="_useremail" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="email.hasError('required') && email.touched" item-left>
+            <p text-left>{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_EMAIL" | translate }}</p>
+          </ion-item>
+          <ion-item *ngIf="email.hasError('pattern')" item-left>
+              <p>{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_VALID_EMAIL" | translate }}</p>
+            </ion-item>
+      </ion-card-header>
+      <ion-card-content margin padding>
+          <p no-margin>{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.NEW_EXISTING_USER" | translate }}</p>
+      </ion-card-content>
+
+      <button ion-button block color="dark" [disabled]="!emailLoginForm.valid" type="submit">verify</button>
+    </form>
+  </ion-content>

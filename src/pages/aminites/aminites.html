@@ -1,0 +1,44 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding no-bounce>
+  <figure no-margin class="fixedHeight">
+    <img src="assets/images/ammineties.jpg" />
+    <figcaption>
+        <h3><strong>{{ "COMMON.STATIC_TEXT.FIND" | translate }}</strong> {{"AMINITIES_PAGE.STATIC_TEXT.ANIMITIES" | translate }}</h3>
+      </figcaption>
+  </figure>
+  
+  <ion-list>
+      <ion-item *ngFor="let aminity of aminitesList; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+        <h3>
+          
+            <img [src]="aminity.icon"> 
+            <span>{{aminity.title}}</span>
+            <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'remove-circle' : 'add-circle'"></ion-icon>
+          
+        </h3>
+        <article *ngIf="isGroupShown(i)">{{aminity.description}}</article>
+      </ion-item>
+    </ion-list>
+</ion-content>

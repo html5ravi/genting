@@ -1,0 +1,21 @@
+brand-filter {
+    ion-card{
+        width:100% !important;
+        position: fixed;
+        z-index: 999;
+        top:75px !important;
+        ion-icon{
+            font-size: 25px;
+        }
+        p{
+            font-size: 16px !important;
+            margin: 0px 0 0 10px !important;
+            font-weight: bold !important;
+            color: #000 !important;
+        }
+        img{
+            width: 22px;
+            margin: 0 0 0 -10px;
+        }
+    }
+}

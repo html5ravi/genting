@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row>
+      <!-- <ion-col col-2>
+        <ion-icon name="arrow-back" (click)="gotoPage('MyBagPage')" class="arrowBack"></ion-icon>
+      </ion-col> -->
+      <ion-col col-8>
+        <strong style="top: 22px;">Image Viewer</strong>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <section *ngIf="sliderImage?.length > 1">
+    <ion-slides *ngIf="sliderImage?.length > 1">
+      <ion-slide *ngFor="let images of sliderImage; let i =index;">
+        <figure class="pinch">
+          <img src="http:{{ images?.LargeImage }}" zoom-pan #pinchElement/>
+        </figure>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides *ngIf="sliderImage?.length == 1">
+      <ion-slide>
+        <figure>
+          <img src="http:{{ sliderImage[0]?.LargeImage }}" zoom-pan #pinchElement/>
+        </figure>
+      </ion-slide>
+    </ion-slides>
+  </section>
+
+  <section *ngIf="sizeGuide">
+    <ion-slides>
+      <ion-slide>
+        <figure>
+          <img [src]="sizeGuide" zoom-pan #pinchElement/>
+        </figure>
+      </ion-slide>
+    </ion-slides>
+  </section>
+</ion-content>

@@ -1,0 +1,91 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content no-padding no-bounce>
+  <ion-card-content padding>
+  <h3 no-margin>{{ "STORE_DIRECTORY_PAGE.STATIC_TEXT.STORE" | translate }}</h3>
+  <ion-searchbar no-padding
+  placeholder="Search by store name"
+  animated:true
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+<ion-list *ngIf="newStoreList.length > 0" class="searchAutoComplete border">
+    <ion-item *ngFor="let store of newStoreList">
+      <p (click)="selectStore(store)">{{ store.storename }}</p>
+    </ion-item>
+  </ion-list> 
+
+    <h6>{{ "STORE_DIRECTORY_PAGE.STATIC_TEXT.FILTER" | translate }}</h6>
+    <ion-item no-padding class="itemCustom">
+        <ion-label>{{ "COMMON.STATIC_TEXT.CATEGORIES" | translate }}</ion-label>
+        <ion-select [(ngModel)]="category" (ngModelChange)="sortStoreByCategory()" name="brandone" multiple="true">
+          <ion-option *ngFor="let storecat of storeCategoryList" value="{{storecat?.categoryname}}">{{storecat?.categoryname}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <h6>{{ "STORE_DIRECTORY_PAGE.STATIC_TEXT.SORT" | translate }}</h6>
+    <ion-segment [(ngModel)]="segment" color="dark" (ionChange)="segmentChanged($event)">
+        <ion-segment-button active value="all">
+          ALL
+        </ion-segment-button>
+        <ion-segment-button value="a-l">
+         A-L 
+        </ion-segment-button>
+        <ion-segment-button value="m-z">
+         M-Z
+        </ion-segment-button>
+        <ion-segment-button value="others">
+            OTHERS
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-content>
+    <section class="scrollItem">
+     <section *ngFor="let store of latestStoreList" >
+      <ion-list class="autoComplete">
+         <ion-list-header no-margin *ngIf="headerByStartingLetter(store)">
+           {{getUpperCase(store?.storename)}}</ion-list-header> 
+        <ion-item >
+            <ion-row class="tbl">
+              <ion-col col-2 class="tbl-cell">
+                  <ion-avatar item-start>
+                      <img *ngIf="store?.brandimage" src="{{store?.brandimage}}" >
+                      <img *ngIf="!store?.brandimage" src="assets/images/defaultimg.png">
+                    </ion-avatar>
+              </ion-col>
+              <ion-col tappable col-8 (click)="gotoStoreDetail(store)" class="tbl-cell">
+                  <span>{{store?.storename}}</span>
+              </ion-col>
+              <ion-col col-2 class="tbl-cell">
+                  <ion-icon tappable name="ios-navigate" (click)="gotoMapPage(store?.unitnumber)"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+      </ion-list>
+    </section>
+
+    </section>
+</ion-content>

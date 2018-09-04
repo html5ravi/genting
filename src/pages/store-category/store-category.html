@@ -1,0 +1,51 @@
+
+<!-- <header [canShowMenu]=true [showBackButton]=true></header>--> 
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content no-padding no-bounce #container>
+    <h4 margin-left>{{ "STORE_CATEGORY_PAGE.STATIC_TEXT.STORE" | translate }}</h4>
+    <section class="contentMain">
+        <section *ngFor="let key of listKey">
+            <ion-list class="autoComplete">
+                <ion-list-header no-margin>{{ getUpperCase(key) }} </ion-list-header>
+                <ion-item *ngFor="let store of storeAsObject[key].storescat">
+                    <ion-row class="tbl">
+                        <ion-col col-2 class="tbl-cell">
+                            <ion-avatar item-start>
+                                <img [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="store?.brandimage" [scrollObservable]="container.ionScroll">
+                                <!-- <img *ngIf="!store?.brandimage" src="assets/images/defaultimg.png"> -->
+                            </ion-avatar>
+                        </ion-col>
+                        <ion-col tappable col-8 (click)="gotoStoreDetail(store)" class="tbl-cell">
+                            <span>{{store?.storename}}</span>
+                        </ion-col>
+                        <ion-col col-2 class="tbl-cell">
+                            <ion-icon tappable name="ios-navigate" (click)="gotoMapPage(store?.unitnumber)"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </ion-list>
+        </section>
+    </section>
+</ion-content>

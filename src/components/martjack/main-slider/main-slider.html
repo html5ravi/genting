@@ -1,0 +1,25 @@
+
+  <ion-slides *ngIf="homeBannerData.length > 0" pager="true" autoplay="5000" loop="true" speed="1000">
+    <ion-slide *ngFor="let banner of homeBannerData | sort:'priority'" (click)="navTo(banner)">
+      <section>
+        <figure no-margin >
+          <a *ngIf="banner?.linktype =='InAppLink'" href="#{{banner?.destination}}"><img [src]="banner?.bannerimage" /></a>
+          <a *ngIf="banner?.linktype =='None'"><img [src]="banner?.bannerimage" /></a>
+          <a *ngIf="banner?.linktype =='WebLink'" href="{{banner?.destination}}"><img [src]="banner?.bannerimage" /></a>
+        </figure>
+      </section>
+    </ion-slide>
+    <!-- <ion-slide>
+      <figure>
+          <img src="assets/images/martjack/banner2.png"/>
+        <figcaption>shop & <br /> <span>pick up</span></figcaption>
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure>
+          <img src="assets/images/martjack/aboutGentingsimon.jpg"/>
+        <figcaption>shop & <br /> <span>pick up</span></figcaption>
+      </figure>
+    </ion-slide> -->
+  </ion-slides>
+

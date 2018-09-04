@@ -1,0 +1,44 @@
+<ion-content #container>
+<ion-card no-margin no-padding *ngIf = "productDisplay?.Inventory > 0">
+  <figure>
+    <img *ngIf="productDisplay?.LargeImage" [defaultImage]="'assets/images/default-Img.png'" lazyLoad="http:{{ productDisplay?.LargeImage }}" [scrollObservable]="container.ionScroll"/>
+    <!-- <img *ngIf="!productDisplay?.LargeImage" src="assets/images/gentingLogo.png" /> -->
+    <!-- <img-loader src="http:{{ productDisplay?.LargeImage }}"></img-loader> -->
+    <!-- <article>
+        <input class="star" type="checkbox">
+    </article> -->
+  </figure>
+  <ion-card-content>
+    <h6>{{ productDisplay?.Brand }}</h6>
+    <p>{{ productDisplay?.Title }}</p>
+    <ion-row>
+      <ion-col col-12>
+        <del *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</del> 
+        <strong *ngIf="productDisplay?.MRP <= productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</strong>
+        <strong *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.WebPrice }}</strong>
+        <b *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">save {{ productDisplay?.Discount }}%</b>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card no-margin no-padding *ngIf = "productDisplay?.Inventory <= 0">
+<figure style="min-height: 175px">
+  <img *ngIf="productDisplay?.LargeImage" src="http:{{ productDisplay?.LargeImage }}" />
+    <img *ngIf="!productDisplay?.LargeImage" src="assets/images/gentingLogo.png" />
+    <h6 class="outofStock">Out Of Stock</h6>
+</figure>
+<ion-card-content>
+  <h6>{{ productDisplay?.Brand }}</h6>
+  <p>{{ productDisplay?.Title }}</p>
+  <ion-row>
+    <ion-col col-12>
+      <del *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</del> 
+      <strong *ngIf="productDisplay?.MRP <= productDisplay?.WebPrice">MYR {{ productDisplay?.MRP }}</strong>
+      <strong *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">MYR {{ productDisplay?.WebPrice }}</strong>
+      <b *ngIf="productDisplay?.MRP > productDisplay?.WebPrice">save {{ productDisplay?.Discount }}%</b>
+    </ion-col>
+  </ion-row>
+</ion-card-content>
+</ion-card>
+</ion-content>

@@ -1,0 +1,104 @@
+<header [canShowMenu]=false [showBackButton]=true>
+</header>
+
+
+<ion-content no-padding no-bounce>
+      <ion-card-content no-padding *ngIf='!otp_bool'>
+            <h3 *ngIf="!fromForgotPassword">PASSWORD POLICY UPDATE !</h3>
+
+
+            <div class="otpContent">
+                  <h3 *ngIf="fromForgotPassword" class="resetPasswordTxt">RESET PASSWORD</h3>
+                  <div *ngIf="!fromForgotPassword">
+                        <p style="margin: 0 !important;">Dear Customer,</p>
+                        <p>In our efforts to improve customer data security, we have made few changes to our password policy.</p>
+                        <p>Instead of using an OTP for login all users are now required to login using a password.</p>
+                        <p>We notice that your account doesnt have a password.We have sent an OTP to your registered e-mail
+                              id. Please check your mail and use the OTP to set password</p>
+                  </div>
+
+                  <p *ngIf="fromForgotPassword">We have sent an email to
+                        <strong>{{ username }}</strong> with an OTP to verify your email address.</p>
+                  <form [formGroup]="_OTPForm" (ngSubmit)="validateOtp()">
+                        <ion-item *ngIf="_otp.hasError('required') && _otp.touched">
+                              <p class="error">{{ "OTP_PAGE.STATIC_TEXT.OTP_REQ" | translate }}</p>
+                        </ion-item>
+                        <ion-item *ngIf="_otp.hasError('maxlength') || _otp.hasError('minlength')">
+                              <p class="error">{{ "OTP_PAGE.STATIC_TEXT.OTP_VALID" | translate }}</p>
+                        </ion-item>
+                        <ion-item *ngIf="_otp.hasError('whitespace') && _otp.touched">
+                              <p class="error">{{ "OTP_PAGE.STATIC_TEXT.OTP_VALID" | translate }}</p>
+                        </ion-item>
+                        <ion-item no-padding>
+                              <ion-input type="number" placeholder="ENTER OTP" formControlName="_otp"></ion-input>
+                        </ion-item>
+                        <article class="text-center">
+                              <span text-center>{{ "OTP_PAGE.STATIC_TEXT.OTP_RECEIVED" | translate }}</span>
+                              <a (click)="resendOtp()">
+                                    {{ "OTP_PAGE.STATIC_TEXT.RESEND" | translate }}
+                              </a>
+                        </article>
+                        <button ion-button color="dark" [disabled]=!_OTPForm.valid type="submit" class="genBtn">VERIFY OTP</button>
+                  </form>
+            </div>
+
+      </ion-card-content>
+
+
+      <ion-card-content *ngIf='otp_bool'>
+            <div class="createPasswordOut">
+                  <h3 *ngIf="!fromForgotPassword">CREATE PASSWORD</h3>
+                  <h3 *ngIf="fromForgotPassword">RESET PASSWORD</h3>
+                  <p class="success">OTP verified successfully</p>
+                  <p class="genNew">Please generate new password</p>
+                  <p>
+                        <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon> Password must be atleast 8 character long, should have</p>
+                  <ul>
+                        <li>1 Special Character</li>
+                        <li>1 Upper Case Alphabet </li>
+                        <li>1 Number</li>
+                  </ul>
+                  <form [formGroup]='passwordForm' (ngSubmit)="passwordSubmit()" class="resetPasswordOut">
+                              <ion-item *ngIf="Password?.hasError('required') && Password?.touched" item-left>
+                                          <p text-left class="error"> *{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_PASSWORD" | translate }}</p>
+                                    </ion-item>
+                        <section class="pr">
+                              <ion-item no-padding>
+                                    <ion-input type="password" placeholder="Enter password" name="password" formControlName="Password"> </ion-input>
+                              </ion-item>
+                              <ion-icon *ngIf="!Password?.hasError('required')  && !Password?.hasError('pattern')" ios="ios-checkmark" class="checkCorrect"
+                                    md="md-checkmark"></ion-icon>
+                        </section>
+                        <ion-item *ngIf="ConfirmPassword?.hasError('required') && ConfirmPassword?.touched" item-left>
+                                    <p text-left class="error"> *{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.ENTER_CONFIRM_PASSWORD" | translate }}</p>
+                              </ion-item>
+                              <ion-item *ngIf="ConfirmPassword?.hasError('MatchFields') && ConfirmPassword?.touched" item-left>
+                                    <p text-left class="error">*{{ "EMAIL_LOGIN_PAGE.STATIC_TEXT.PASSWORD_MISMATCH" | translate }}</p>
+                              </ion-item>
+                        <section class="pr">
+                              <ion-item no-padding>
+                                    <ion-input type="password" placeholder="Re-enter password" name="confirmpass" formControlName="ConfirmPassword"></ion-input>
+                              </ion-item>
+                              <ion-icon class="checkCorrect" ios="ios-checkmark" md="md-checkmark" *ngIf="!ConfirmPassword?.hasError('required') && !ConfirmPassword?.hasError('MatchFields')"
+                                    ></ion-icon>
+                              <ion-icon class="checkWrong" ios="ios-close" md="md-close" *ngIf="ConfirmPassword?.touched && ConfirmPassword?.hasError('MatchFields')"></ion-icon>
+                        </section>
+                      
+                        <button ion-button color="dark" [disabled]=!passwordForm.valid type="submit" class="genBtn">Submit</button>
+                  </form>
+            </div>
+      </ion-card-content>
+</ion-content>
+
+<mymodal #reset>
+      <ion-grid>
+          <p text-center>Your password is successfully reset. </p>
+          <ion-row>
+              <ion-col col-12>
+                  <button ion-button  (click)="closeModal()">
+                    {{ "MODALS.BUTTONS.OK" | translate }}</button>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+    </mymodal>
+  

@@ -1,0 +1,12 @@
+<article class="internalBadgeOut">
+    <!-- <ion-icon name="heart-outline" >
+      <span>0</span>
+    </ion-icon> -->
+    <!-- <ion-icon name="ios-cart-outline" (click) = "gotoMybag()"> -->
+      <img src="assets/images/BagBlack.svg" (click)="gotoMybag()" class="cart">
+      <span *ngIf = "cartProvider.getCartItemQuantity()!=0 " (click)="gotoMybag()">{{cartProvider.getCartItemQuantity()}}</span>
+    <!-- </ion-icon> -->
+    <ion-icon name="md-share" (click)="socialShare()"></ion-icon>
+    <!-- </ion-icon> -->
+    <!-- <ion-icon name="md-share" (click)="socialShare()"></ion-icon> -->
+</article>

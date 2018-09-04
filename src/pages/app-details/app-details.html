@@ -1,0 +1,42 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-padding no-bounce>
+  <figure no-margin class="fixedHeight">
+    <img src="assets/images/appDetails.jpg" />
+    <figcaption>
+        <h3><strong>{{"APP_DETAILS_PAGE.STATIC_TEXT.APP" | translate }}</strong> {{"APP_DETAILS_PAGE.STATIC_TEXT.DETAILS" | translate }}.</h3>
+      </figcaption>
+  </figure>
+  <ion-card-content>
+    <p>{{"APP_DETAILS_PAGE.STATIC_TEXT.VERSION" | translate }}: {{_appVersion}}</p>
+    <section *ngFor="let detail of _appDetails">
+      <article *ngIf="detail?.key=='aboutapp'">
+        <p [innerHtml]="detail?.datavalue | safehtml" ></p>
+      </article>
+    </section>
+    
+    <button ion-button block color="dark" margin-bottom (click)="navTo('AboutGentingSimonPage')">{{"COMMON.STATIC_TEXT.ABOUT" | translate }} {{"GENTING" | translate }}</button>
+    <button ion-button block color="dark" margin-bottom (click)="navTo('TermsofUsePage')">{{"COMMON.STATIC_TEXT.TERMS" | translate }}</button>
+    <button ion-button block color="dark" margin-bottom (click)="navTo('PrivacyPolicyPage')">{{"COMMON.STATIC_TEXT.PRIVACY" | translate }}</button>
+
+  </ion-card-content>
+</ion-content>

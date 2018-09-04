@@ -1,0 +1,39 @@
+<!-- Header Component-->
+<top-header></top-header>
+<!-- Main Content Goes Here-->
+<ion-content no-padding>
+    <ion-card-content padding>
+      <ion-searchbar #searchbox no-padding [formControl]="searchField"
+        placeholder="Search"
+        animated:true
+        autocomplete="on"
+        [(ngModel)]="searchParam"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>
+      <ion-list *ngIf="searchHistoryList && searchHistoryList?.length > 0 && searchList?.length == 0">
+        <ion-item  *ngFor="let list of searchHistoryList" (click)="setSearchTerm(list)">
+            {{list}}
+        </ion-item>
+      </ion-list>
+ 
+      <ion-list *ngIf="searchList?.length > 0">
+        <ion-item *ngFor="let list of searchList" (click)="setSearchTerm(list)">
+         {{list}}
+        </ion-item>
+      </ion-list>
+      </ion-card-content>
+      <ion-card-content *ngIf="searchList?.length <= 0 && searchParam != ''">
+        <article class="emptyCart">
+          <h4>No search result found for "{{searchParam}}"</h4>
+          <p>Are you sure you spelt it correctly?</p>
+        </article>
+      </ion-card-content>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <bottom-menu [pagename]="'SearchPage'"></bottom-menu>
+  </ion-toolbar>
+</ion-footer>

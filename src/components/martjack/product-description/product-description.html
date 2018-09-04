@@ -1,0 +1,23 @@
+<ion-list>
+      <ion-item (click)="toggleGroup()" [ngClass]="{active: toggle}" *ngIf="productData?.ShortDescription">
+            <h3>
+                  <span>FEATURES</span>
+                  <ion-icon color="success" item-right [name]="toggle ? 'remove-circle' : 'add-circle'"></ion-icon>
+            </h3>
+            <article *ngIf="toggle" [innerHTML]="productData?.ShortDescription | safehtml"></article>
+      </ion-item>
+      <ion-item (click)="toggleGroupMoreInfo()" [ngClass]="{active: toggleMoreInfo}" *ngIf="productData?.LongDescription">
+            <h3>
+                  <span>DESCRIPTION</span>
+                  <ion-icon color="success" item-right [name]="toggleMoreInfo ? 'remove-circle' : 'add-circle'"></ion-icon>
+            </h3>
+            <article *ngIf="toggleMoreInfo" [innerHTML]="productData?.LongDescription | safehtml"></article>
+      </ion-item>
+      <ion-item  *ngIf="productData?.OfferDescription">
+            <h3>
+                  <span>SIZE GUIDE</span>
+                  <ion-icon color="success" item-right [ngClass]="{active: toggleSize}" [name]="toggleSize ? 'remove-circle' : 'add-circle'" (click)="toggleGroupSize()"></ion-icon>
+            </h3>
+            <img *ngIf="toggleSize" [src]="productData?.OfferDescription | safeUrl" (click)="navToViewImage(0)">
+      </ion-item>
+</ion-list>

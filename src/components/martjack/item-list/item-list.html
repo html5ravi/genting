@@ -1,0 +1,51 @@
+<ion-grid class="bb">
+    <ion-row>
+      <ion-col col-4>
+        <figure no-margin>
+          <img src="http:{{orderDetail?.ImageUrl}}" />
+        </figure>
+        <span>{{status}}</span>
+      </ion-col>
+      <ion-col col-8>
+        <h6>Brand</h6>
+        <h6>{{orderDetail?.ProductTitle}}</h6>
+        <ion-grid no-padding>
+          <ion-row class="listData">
+            <ion-col col-10>
+              <ion-row *ngFor="let v of variants">
+                <ion-col col-6>
+                  <span>{{v.key}}:</span>
+                </ion-col>
+                <ion-col col-6>
+                  <strong>{{v.value}}</strong>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <span>Quantity:</span>
+                </ion-col>
+                <ion-col col-6>
+                  <strong>{{orderDetail?.Quantity}}</strong>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <span>Price:</span>
+                </ion-col>
+                <ion-col col-6>
+                  <strong>MYR {{ orderDetail?.ProductPrice }}</strong>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid no-padding *ngIf="orderDetail?.DerivedStatusCode == 'A' || orderDetail?.DerivedStatusCode == 'W'">
+          <ion-row class="listData">
+            <ion-col col-10>
+              <button ion-button block color="dark" margin-top margin-bottom (click)="findAssociatedStore(orderDetail?.VendorId)">find store</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>

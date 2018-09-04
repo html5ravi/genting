@@ -1,0 +1,38 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon *ngIf="!hideBackButton" name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+  <ion-content no-padding no-bounce>
+      <figure no-margin class="fixedHeight">
+        <img src="assets/images/aboutGentingsimon.jpg" />
+        <figcaption>
+            <h3><strong>{{ "COMMON.STATIC_TEXT.ABOUT" | translate }}</strong>{{ "GENTING" | translate }}.</h3>
+          </figcaption>
+      </figure>
+      
+      <ion-card-content>
+        <article *ngFor="let faq of faqs">
+          <section *ngIf="faq?.key=='aboutsimon'">
+              <p [innerHtml]="faq?.datavalue | safehtml"></p>
+          </section>
+        </article>
+    </ion-card-content>
+    </ion-content>

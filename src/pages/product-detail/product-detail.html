@@ -1,0 +1,99 @@
+<ion-content no-padding>
+      <internal-badge (share)="openSharing($event)"></internal-badge>
+      <product-slider [sliderImage]="sliderImages"></product-slider>
+      <ion-card-content padding>
+            <ion-grid>
+                  <ion-row>
+                        <ion-col col-8>
+                              <h6>{{ productDetails?.Brand }}</h6>
+                              <span>{{ productDetails?.Title }}</span>
+                        </ion-col>
+                        <ion-col col-4 text-right *ngIf="!isVariantsAvailable">
+                              <h5 *ngIf="productDetails?.MRP > productDetails?.WebPrice">MYR {{ productDetails?.WebPrice | decimal }}</h5>
+                              <h5 *ngIf="productDetails?.MRP <= productDetails?.WebPrice">MYR {{ productDetails?.MRP | decimal }}</h5>
+                              <del *ngIf="productDetails?.MRP > productDetails?.WebPrice">MYR {{ productDetails?.MRP | decimal }}</del>
+                              <small *ngIf="productDetails?.MRP > productDetails?.WebPrice">SAVE {{ productDetails?.Discount  }}%</small>
+                        </ion-col>
+                        <ion-col col-4 text-right *ngIf="isVariantsAvailable">
+                              <h5 *ngIf="variantProducts[0]?.VariantMRP > variantProducts[0]?.VariantWebPrice">MYR {{ productDetails?.WebPrice | decimal }}</h5>
+                              <h5 *ngIf="variantProducts[0]?.VariantMRP <= variantProducts[0]?.VariantWebPrice">MYR {{ productDetails?.MRP | decimal }}</h5>
+                              <del *ngIf="variantProducts[0]?.VariantMRP > variantProducts[0]?.VariantWebPrice">MYR {{ productDetails?.MRP | decimal }}</del>
+                                    <small *ngIf="variantProducts[0]?.VariantMRP > variantProducts[0]?.VariantWebPrice">SAVE {{ productDetails?.Discount }}%</small>
+                              </ion-col>
+                  </ion-row>
+            </ion-grid>
+            <ion-grid *ngIf="isVariantsAvailable && variantProperties.length > 0">
+                  <!-- <div *ngFor="let variantType of variantArray"> -->
+                  <ion-row *ngFor="let variant of variantArray[0]?.variantProperties">
+                              <ion-col col-3>
+                                    <h6 style="text-transform: uppercase; color: #666">{{ variant?.PropertyName }}</h6>
+                              </ion-col>
+                        <ion-col col-9>
+                              <ion-row>
+                                    <ion-col col-3 *ngFor="let v of variant.VariantValues">
+                                          <div (click)="changeFilters(v)" class="colorImgList">
+                                          <img [ngClass]="{'addBorder': v.isActive}" style="box-shadow: 2px 1px #888888;" *ngIf="v?.swatchimage" src="http:{{v?.swatchimage}}" class="colorImg"/> 
+                                          <!-- <p>{{ v?.propertyvalue}}</p> -->
+                                          </div>          
+                                    </ion-col>
+                              </ion-row>
+                        </ion-col>
+                  </ion-row>
+                  <!-- </div> -->
+            </ion-grid>
+            <ion-grid no-padding>
+                  <ion-row>
+      <!-- <ion-col col-6>
+          <button ion-button block color="dark" outline style="width:98%"> Add to wishlist
+            <ion-icon name="heart-outline"></ion-icon>
+          </button>
+        </ion-col> -->
+                        <!-- <ion-col col-6>
+          <button ion-button block color="dark" class="bag"> add to bag
+            <ion-icon name="ios-cart-outline"></ion-icon>
+          </button>
+        </ion-col> -->
+                        <ion-col>
+                              <button *ngIf="userdataProvider?.hasToken() && !isProductAdded" ion-button block color="dark" #addToBtn class="bag" (click)="addToCart(productDetails)" [disabled]="isButtonDisabled">{{addToCartBtn}}
+                                    <!-- <ion-icon name="ios-cart-outline"></ion-icon> -->
+                                    <img src="assets/images/Bag.svg"/>
+                              </button>
+                              <button *ngIf="!userdataProvider?.hasToken() && !isProductAdded" ion-button block color="dark" class="bag" (click)="goTo('LoginPage')">Login To Add To Cart
+                                    <!-- <ion-icon name="ios-cart-outline"></ion-icon> -->
+                                    <img src="assets/images/Bag.svg"/>
+
+                              </button>
+                              <button *ngIf="userdataProvider?.hasToken() && isProductAdded" ion-button block  class="bag"  style="background-color:#9f005b !important">Added
+                                    
+                              </button>
+                        </ion-col>
+                  </ion-row>
+            </ion-grid>
+            <product-description [productData]="productDetails"></product-description>
+      </ion-card-content>
+      <!-- <section class="patch">
+    <span>you may also like</span>
+  </section>
+  <section class="recent">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8>
+          <p padding-left>Adidas</p>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button outline color="dark" block small style="padding: 15px !important">view all</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-6>
+        <brand-list></brand-list>
+      </ion-col>
+      <ion-col col-6>
+        <brand-list></brand-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+</ion-content>

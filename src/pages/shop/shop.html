@@ -1,0 +1,47 @@
+<!-- Header Component -->
+<top-header></top-header>
+
+<ion-content no-padding >
+  <ion-segment #scrollSegment [(ngModel)]="ProductList" (ionChange)="segChange($event)">
+    <ion-segment-button value="{{navigation?.name}}"  *ngFor ="let navigation of navigation_items" >
+      <strong style="top: 3px;">{{navigation?.name}}</strong> 
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-slides #mySlider centered-slides="false" (ionSlideDidChange)="onSlideChanged($event)"> 
+  
+    <ion-slide *ngFor="let case of navigation_items">
+        <ion-slides [loop]="true" [autoplay]="30000">
+          <div *ngFor ="let banner of bannerData">
+            <ion-slide *ngIf="banner?.TargetType =='Category' && banner?.TargetID == case?.categoryid">
+              <figure no-margin> 
+                <img [src] = "img_url + banner?.ContentUrl">
+              </figure> 
+            </ion-slide>
+          </div>
+        </ion-slides>
+        <ion-card-content>
+          <h2 style="margin:0">BRANDS</h2>
+        </ion-card-content>
+        <ul class="brandList">
+          <section [hidden]="tileImg.RefCode != case?.categoryid" *ngFor="let tileImg of tileImages" >
+            <li *ngIf="tileImg.RefCode == case?.categoryid">
+              <figure>
+                <img [src] = "img_url + tileImg.ContentUrl" (click)="goto('ShopProductsPage',tileImg)">
+              </figure>
+            </li>
+          </section>
+        </ul>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+
+<!-- =========================================== -->
+
+
+<ion-footer>
+  <ion-toolbar>
+    <bottom-menu [pagename]="'ShopPage'"></bottom-menu>
+  </ion-toolbar>
+</ion-footer>

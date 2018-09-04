@@ -1,0 +1,38 @@
+
+  <header [canShowMenu]=true [showBackButton]=true></header>
+
+
+  <ion-content no-padding no-bounce>
+    <figure no-margin>
+        <img *ngIf="promotion?.bannerimage" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="promotion?.bannerimage" />
+        <!-- <img *ngIf="!promotion?.bannerimage && promotion?.associatedstore[0]?.brandlogo" [src] ="promotion?.associatedstore[0]?.brandlogo"/>
+      <img *ngIf="!promotion?.bannerimage && !promotion?.associatedstore[0]?.brandlogo && promotion?.associatedstore[0]?.brandimage" [src] ="promotion?.associatedstore[0]?.brandimage"  />
+      <img *ngIf="!promotion?.bannerimage && !promotion?.associatedstore[0]?.brandlogo && !promotion?.associatedstore[0]?.brandimage" src="assets/images/defaultimg.png"  />-->
+       <p *ngIf="isAlreadyRedeemed">{{ "PROMOTION_BANNER_PAGE.STATIC_TEXT.REDEEMED" | translate }}</p>  
+    </figure>
+    <ion-card-content>
+      <h3 no-margin>{{promotion?.promotiontitle}}</h3>
+     <p no-margin [innerHTML]="promotion?.promotiondescription | safehtml"></p>
+      
+        <section *ngIf="promotion?.hasvipoffer">
+          <section *ngIf="auth_key">
+            <button margin-top margin-bottom ion-button block color="dark" (click)="scanQrCode(promotion?.experiencesidforvipoffersonly)">{{_redeemedText}}</button>
+          </section>
+          <section *ngIf="!auth_key">
+            <button margin-top margin-bottom ion-button block color="dark" (click)="goToLoginPage()">{{ "PROMOTION_BANNER_PAGE.BUTTONS.LOGIN_REDEEM" | translate }}</button>
+            <article>
+              <p no-margin>{{ "PROMOTION_BANNER_PAGE.STATIC_TEXT.VIP_MEMBER" | translate }}.</p>
+            </article>
+          </section>
+        </section>
+        <!-- <ng-template #nonVipOffer>
+            <section>
+                <article>
+                  <p no-margin>{{ "PROMOTION_BANNER_PAGE.STATIC_TEXT.REDEEM_OFFER" | translate }}.</p>
+                </article>
+              </section>
+        </ng-template> -->
+       <!-- <button ion-button block color="dark" margin-bottom margin-top><a href ="tel:{{promotion?.associatedstore[0]?.phone}}">Call the store  {{promotion?.associatedstore[0]?.phone}}</a></button> -->
+    </ion-card-content>
+  </ion-content>
+  

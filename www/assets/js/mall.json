@@ -1,0 +1,1148 @@
+{
+    "mapwidth": "1000",
+    "mapheight": "600",
+    "categories": [],
+    "levels": [{
+        "id": "basement-floor",
+        "title": "Basement",
+        "map": "assets/images/mall/final.svg",
+        "minimap": "",
+        "locations": [{
+                "id": "500",
+                "title": "Starbucks Coffee",
+                "about": "Unit: 500",
+                "description": "Unit: 500",
+                "category": "food",
+                "thumbnail": "",
+                "link": "500",
+                "x": "0.2183",
+                "y": "0.1252"
+            },
+            {
+                "id": "502",
+                "title": "Baskin-Robbins",
+                "about": "test",
+                "description": "Unit: 502",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.2383",
+                "y": "0.1552"
+            },
+            {
+                "id": "504",
+                "title": "Royal Sporting House",
+                "about": "",
+                "description": "Unit: 504",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2583",
+                "y": "0.1652"
+            },
+            {
+                "id": "510",
+                "title": "Cotton On",
+                "about": "",
+                "description": "Unit: 510",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.2983",
+                "y": "0.1752"
+            },
+            {
+                "id": "514",
+                "title": "Bath & Body Works",
+                "about": "",
+                "description": "Unit: 514",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.3283",
+                "y": "0.1852"
+            },
+            {
+                "id": "516",
+                "title": "Austin Reed",
+                "about": "",
+                "description": "Unit: 516",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.3483",
+                "y": "0.2052"
+            },
+            {
+                "id": "518",
+                "title": "Obermain",
+                "about": "",
+                "description": "Unit: 518",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.3583",
+                "y": "0.2352"
+            },
+            {
+                "id": "520",
+                "title": "New Balance Outlet",
+                "about": "",
+                "description": "Unit: 520",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3683",
+                "y": "0.2552"
+            },
+            {
+                "id": "522",
+                "title": "The Body Shop Outlet",
+                "about": "",
+                "description": "Unit: 522",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3783",
+                "y": "0.2752"
+            }, {
+                "id": "526",
+                "title": "Levi's Outlet Store",
+                "about": "",
+                "description": "Unit: 526",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.3983",
+                "y": "0.3052"
+            }, {
+                "id": "528",
+                "title": "Gap Outlet",
+                "about": "",
+                "description": "Unit: 528",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.4383",
+                "y": "0.3252"
+            }, {
+                "id": "532",
+                "title": "Guess",
+                "about": "",
+                "description": "Unit: 532",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.4783",
+                "y": "0.3352"
+            }, {
+                "id": "902",
+                "title": "Adidas",
+                "about": "",
+                "description": "Unit: 902",
+                "category": "clothing",
+                "thumbnail": "",
+                "x": "0.5583",
+                "y": "0.3352"
+            }, {
+                "id": "908",
+                "title": "Asics",
+                "about": "",
+                "description": "Unit: 908",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5933",
+                "y": "0.3352"
+            }, {
+                "id": "910",
+                "title": "Hush Puppies Apparel",
+                "about": "",
+                "description": "Unit: 910",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6113",
+                "y": "0.3352"
+            }, {
+                "id": "912",
+                "title": "Xixili",
+                "about": "",
+                "description": "Unit: 912",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6313",
+                "y": "0.3352"
+            }, {
+                "id": "914",
+                "title": "Swatch",
+                "about": "",
+                "description": "Unit: 914",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6513",
+                "y": "0.3352"
+            }, {
+                "id": "915",
+                "title": "Sunglass Hut",
+                "about": "",
+                "description": "Unit: 915",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6713",
+                "y": "0.3152"
+            }, {
+                "id": "916",
+                "title": "Rockport",
+                "about": "",
+                "description": "Unit: 916",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6913",
+                "y": "0.2852"
+            }, {
+                "id": "917",
+                "title": "Poney Outlet",
+                "about": "",
+                "description": "Unit: 917",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7013",
+                "y": "0.2652"
+            }, {
+                "id": "918",
+                "title": "Hush Puppies",
+                "about": "",
+                "description": "Unit: 918",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7113",
+                "y": "0.2352"
+            }, {
+                "id": "920",
+                "title": "Anakku",
+                "about": "",
+                "description": "Unit: 920",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7213",
+                "y": "0.2152"
+            }, {
+                "id": "922",
+                "title": "Animation World",
+                "about": "",
+                "description": "Unit: 922",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7353",
+                "y": "0.1952"
+            }, {
+                "id": "1402",
+                "title": "TCBY Frozen Yogurt",
+                "about": "",
+                "description": "Unit: 1402",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.7853",
+                "y": "0.1452"
+            }, {
+                "id": "1000",
+                "title": "Nike Factory Store",
+                "about": "",
+                "description": "Unit: 1000",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.1553",
+                "y": "0.2152"
+            }, {
+                "id": "1002",
+                "title": "Absolute Thai",
+                "about": "",
+                "description": "Unit: 1002",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.1503",
+                "y": "0.3152"
+            }, {
+                "id": "2000",
+                "title": "Taang Shifu",
+                "about": "",
+                "description": "Unit: 2000",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.2103",
+                "y": "0.3552"
+            }, {
+                "id": "400",
+                "title": "Renoma Paris",
+                "about": "",
+                "description": "Unit: 400",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2103",
+                "y": "0.2552"
+            }, {
+                "id": "401",
+                "title": "Crepe & San Churros",
+                "about": "",
+                "description": "Unit: 401",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.2003",
+                "y": "0.2452"
+            }, {
+                "id": "402",
+                "title": "Skechers",
+                "about": "",
+                "description": "Unit: 402",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2303",
+                "y": "0.2452"
+            }, {
+                "id": "406",
+                "title": "Puma",
+                "about": "",
+                "description": "Unit: 406",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2503",
+                "y": "0.2652"
+            }, {
+                "id": "408",
+                "title": "Carlo Rino",
+                "about": "",
+                "description": "Unit: 408",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2803",
+                "y": "0.2752"
+            }, {
+                "id": "410",
+                "title": "Akemi Uchi",
+                "about": "",
+                "description": "Unit: 410",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2953",
+                "y": "0.2752"
+            }, {
+                "id": "412",
+                "title": "City Chain",
+                "about": "",
+                "description": "Unit: 412",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3003",
+                "y": "0.2952"
+            }, {
+                "id": "414",
+                "title": "Rip Curl",
+                "about": "",
+                "description": "Unit: 414",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3103",
+                "y": "0.3152"
+            }, {
+                "id": "416",
+                "title": "G2000 Outlet",
+                "about": "",
+                "description": "Unit: 416",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3203",
+                "y": "0.3352"
+            }, {
+                "id": "418",
+                "title": "Time Lab",
+                "about": "",
+                "description": "Unit: 418",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3403",
+                "y": "0.3452"
+            }, {
+                "id": "420",
+                "title": "Clarks",
+                "about": "",
+                "description": "Unit: 420",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3503",
+                "y": "0.3852"
+            }, {
+                "id": "424",
+                "title": "Esprit",
+                "about": "",
+                "description": "Unit: 424",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3703",
+                "y": "0.4252"
+            }, {
+                "id": "426",
+                "title": "La Senza Lingerie",
+                "about": "",
+                "description": "Unit: 426",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4003",
+                "y": "0.4452"
+            }, {
+                "id": "428",
+                "title": "Fossil",
+                "about": "",
+                "description": "Unit: 428",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4203",
+                "y": "0.4452"
+            }, {
+                "id": "430",
+                "title": "Lacoste Outlet",
+                "about": "",
+                "description": "Unit: 430",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4403",
+                "y": "0.4452"
+            }, {
+                "id": "432",
+                "title": "DKNY",
+                "about": "",
+                "description": "Unit: 432",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4553",
+                "y": "0.4452"
+            }, {
+                "id": "434",
+                "title": "Calvin Klein Platinum",
+                "about": "",
+                "description": "Unit: 434",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4753",
+                "y": "0.4452"
+            }, {
+                "id": "436",
+                "title": "Armani Exchange",
+                "about": "",
+                "description": "Unit: 436",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5003",
+                "y": "0.4452"
+            }, {
+                "id": "800",
+                "title": "800",
+                "about": "",
+                "description": "Unit: 800",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5603",
+                "y": "0.4452"
+            }, {
+                "id": "804",
+                "title": "Polo Ralph Lauren Children",
+                "about": "",
+                "description": "Unit: 804",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5953",
+                "y": "0.4552"
+            }, {
+                "id": "806",
+                "title": "Aerosoles",
+                "about": "",
+                "description": "Unit: 806",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6153",
+                "y": "0.4552"
+            }, {
+                "id": "808",
+                "title": "Timberland",
+                "about": "",
+                "description": "Unit: 808",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6453",
+                "y": "0.4552"
+            }, {
+                "id": "812",
+                "title": "Guy Laroche",
+                "about": "",
+                "description": "Unit: 812",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6853",
+                "y": "0.4452"
+            }, {
+                "id": "814",
+                "title": "Aldo",
+                "about": "",
+                "description": "Unit: 814",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7053",
+                "y": "0.4152"
+            }, {
+                "id": "816",
+                "title": "Hang Ten",
+                "about": "",
+                "description": "Unit: 816",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7303",
+                "y": "0.3852"
+            }, {
+                "id": "818",
+                "title": "Sembonia",
+                "about": "",
+                "description": "Unit: 818",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7403",
+                "y": "0.3552"
+            }, {
+                "id": "820",
+                "title": "Rubi Shoes",
+                "about": "",
+                "description": "Unit: 820",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7503",
+                "y": "0.3352"
+            }, {
+                "id": "822",
+                "title": "Leather Avenue",
+                "about": "",
+                "description": "Unit: 822",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7673",
+                "y": "0.3252"
+            }, {
+                "id": "824",
+                "title": "Cotton On Kids",
+                "about": "",
+                "description": "Unit: 824",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7803",
+                "y": "0.3052"
+            }, {
+                "id": "825",
+                "title": "Stride Rite",
+                "about": "",
+                "description": "Unit: 825",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7823",
+                "y": "0.2852"
+            }, {
+                "id": "1302",
+                "title": "Soda",
+                "about": "",
+                "description": "Unit: 1302",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8023",
+                "y": "0.2452"
+            }, {
+                "id": "1304",
+                "title": "Voir Gallery",
+                "about": "",
+                "description": "Unit: 1304",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8223",
+                "y": "0.2452"
+            }, {
+                "id": "1306",
+                "title": "Diadora",
+                "about": "",
+                "description": "Unit: 1306",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8323",
+                "y": "0.2352"
+            }, {
+                "id": "1202",
+                "title": "Akemi Uchi Galleria",
+                "about": "",
+                "description": "Unit: 1202",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8023",
+                "y": "0.4152"
+            }, {
+                "id": "724",
+                "title": "Jim Thompson",
+                "about": "",
+                "description": "Unit: 724",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7623",
+                "y": "0.4852"
+            }, {
+                "id": "722",
+                "title": "Chocolat 5D Studio",
+                "about": "",
+                "description": "Unit: 722",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7353",
+                "y": "0.4952"
+            }, {
+                "id": "720",
+                "title": "La Perla",
+                "about": "",
+                "description": "Unit: 720",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7403",
+                "y": "0.5252"
+            }, {
+                "id": "718",
+                "title": "Lululemon",
+                "about": "",
+                "description": "Unit: 718",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7253",
+                "y": "0.5352"
+            }, {
+                "id": "716",
+                "title": "Beauty Scents",
+                "about": "",
+                "description": "Unit: 716",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7153",
+                "y": "0.5652"
+            }, {
+                "id": "714",
+                "title": "Calvin Klein Underwear",
+                "about": "",
+                "description": "Unit: 714",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6853",
+                "y": "0.5852"
+            }, {
+                "id": "712",
+                "title": "Calvin Klein Jeans",
+                "about": "",
+                "description": "Unit: 712",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6653",
+                "y": "0.6152"
+            }, {
+                "id": "708",
+                "title": "Sacoor Outlet",
+                "about": "",
+                "description": "Unit: 708",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6253",
+                "y": "0.6352"
+            }, {
+                "id": "706",
+                "title": "Swarovski",
+                "about": "",
+                "description": "Unit: 706",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5953",
+                "y": "0.6352"
+            }, {
+                "id": "704",
+                "title": "Furla",
+                "about": "",
+                "description": "Unit: 704",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5753",
+                "y": "0.6352"
+            }, {
+                "id": "700",
+                "title": "700",
+                "about": "",
+                "description": "Unit: 700",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5353",
+                "y": "0.6352"
+            }, {
+                "id": "338",
+                "title": "Armani Outlet",
+                "about": "",
+                "description": "Unit: 338",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4653",
+                "y": "0.6352"
+            }, {
+                "id": "334",
+                "title": "Blackbarrett",
+                "about": "",
+                "description": "Unit: 334",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4303",
+                "y": "0.6352"
+            }, {
+                "id": "332",
+                "title": "Salvatore Ferragamo Company Store",
+                "about": "",
+                "description": "Unit: 332",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4053",
+                "y": "0.6352"
+            }, {
+                "id": "328",
+                "title": "Tory Burch",
+                "about": "",
+                "description": "Unit: 328",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3753",
+                "y": "0.6352"
+            }, {
+                "id": "326",
+                "title": "Swiss Watch Gallery",
+                "about": "",
+                "description": "Unit: 326",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3553",
+                "y": "0.6352"
+            }, {
+                "id": "322",
+                "title": "Tumi",
+                "about": "",
+                "description": "Unit: 322",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3353",
+                "y": "0.6052"
+            }, {
+                "id": "320",
+                "title": "Wear & When",
+                "about": "",
+                "description": "Unit: 320",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3253",
+                "y": "0.5852"
+            }, {
+                "id": "318",
+                "title": "Royal Selangor",
+                "about": "",
+                "description": "Unit: 318",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3053",
+                "y": "0.5552"
+            }, {
+                "id": "316",
+                "title": "Geox",
+                "about": "",
+                "description": "Unit: 316",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2953",
+                "y": "0.5352"
+            }, {
+                "id": "314",
+                "title": "Oroton Factory",
+                "about": "",
+                "description": "Unit: 314",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2953",
+                "y": "0.4952"
+            }, {
+                "id": "312",
+                "title": "Bonia",
+                "about": "",
+                "description": "Unit: 312",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2753",
+                "y": "0.4852"
+            }, {
+                "id": "310",
+                "title": "Samsonite Factory Outlet",
+                "about": "",
+                "description": "Unit: 310",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2553",
+                "y": "0.4652"
+            }, {
+                "id": "308",
+                "title": "Universal Traveller",
+                "about": "",
+                "description": "Unit: 308",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2353",
+                "y": "0.4652"
+            }, {
+                "id": "306",
+                "title": "Tomei",
+                "about": "",
+                "description": "Unit: 306",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2203",
+                "y": "0.4652"
+            }, {
+                "id": "304",
+                "title": "Pedro Outlet",
+                "about": "",
+                "description": "Unit: 304",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2043",
+                "y": "0.4652"
+            }, {
+                "id": "302",
+                "title": "Cosmetics & Designer Fragrances",
+                "about": "",
+                "description": "Unit: 302",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.1903",
+                "y": "0.4452"
+            }, {
+                "id": "300",
+                "title": "Vincci",
+                "about": "",
+                "description": "Unit: 300",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.1653",
+                "y": "0.4352"
+            }, {
+                "id": "100",
+                "title": "Padini Outlet Store",
+                "about": "",
+                "description": "Unit: 100",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.1353",
+                "y": "0.4752"
+            }, {
+                "id": "104",
+                "title": "Suria Muhabat Money Changer",
+                "about": "",
+                "description": "Unit: 104",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.1183",
+                "y": "0.5352"
+            }, {
+                "id": "1106",
+                "title": "World of Outdoors",
+                "about": "",
+                "description": "Unit: 1106",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8353",
+                "y": "0.5052"
+            }, {
+                "id": "1104",
+                "title": "Columbia",
+                "about": "",
+                "description": "Unit: 1104",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8353",
+                "y": "0.5352"
+            }, {
+                "id": "1102",
+                "title": "Bread & Butter",
+                "about": "",
+                "description": "Unit: 1102",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.8483",
+                "y": "0.5602"
+            }, {
+                "id": "633",
+                "title": "Dome Café",
+                "about": "",
+                "description": "Unit: 633",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.8183",
+                "y": "0.6002"
+            }, {
+                "id": "632",
+                "title": "Aigner",
+                "about": "",
+                "description": "Unit: 632",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7883",
+                "y": "0.5902"
+            }, {
+                "id": "630",
+                "title": "Hackett London",
+                "about": "",
+                "description": "Unit: 630",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7783",
+                "y": "0.6202"
+            }, {
+                "id": "628",
+                "title": "Tocco Toscano",
+                "about": "",
+                "description": "Unit: 628",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7633",
+                "y": "0.6302"
+            }, {
+                "id": "626",
+                "title": "Optical 88",
+                "about": "",
+                "description": "Unit: 626",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7453",
+                "y": "0.6302"
+            }, {
+                "id": "624",
+                "title": "Watch Station International",
+                "about": "",
+                "description": "Unit: 624",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7233",
+                "y": "0.6702"
+            }, {
+                "id": "622",
+                "title": "Diane von Furstenberg",
+                "about": "",
+                "description": "Unit: 622",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.7133",
+                "y": "0.7002"
+            }, {
+                "id": "620",
+                "title": "Porsche Design",
+                "about": "",
+                "description": "Unit: 620",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6953",
+                "y": "0.7252"
+            }, {
+                "id": "616",
+                "title": "Kate Spade New York",
+                "about": "",
+                "description": "Unit: 616",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6653",
+                "y": "0.7452"
+            }, {
+                "id": "612",
+                "title": "Hugo Boss",
+                "about": "",
+                "description": "Unit: 612",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.6253",
+                "y": "0.7452"
+            }, {
+                "id": "610",
+                "title": "Coach Men's",
+                "about": "",
+                "description": "Unit: 610",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5953",
+                "y": "0.7452"
+            }, {
+                "id": "606",
+                "title": "Ermenegildo Zegna Outlet Store",
+                "about": "",
+                "description": "Unit: 606",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5253",
+                "y": "0.7752"
+            }, {
+                "id": "604",
+                "title": "Polo Ralph Lauren",
+                "about": "",
+                "description": "Unit: 604",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5653",
+                "y": "0.7552"
+            }, {
+                "id": "602",
+                "title": "Maybank",
+                "about": "",
+                "description": "Unit: 602",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5203",
+                "y": "0.8352"
+            }, {
+                "id": "600",
+                "title": "600",
+                "about": "",
+                "description": "Unit: 600",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.5203",
+                "y": "0.8752"
+            }, {
+                "id": "238",
+                "title": "Gucci",
+                "about": "",
+                "description": "Unit: 238",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4603",
+                "y": "0.8352"
+            }, {
+                "id": "236",
+                "title": "236",
+                "about": "",
+                "description": "Unit: 236",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3953",
+                "y": "0.8852"
+            }, {
+                "id": "232",
+                "title": "Michael Kors",
+                "about": "",
+                "description": "Unit: 232",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4403",
+                "y": "0.7452"
+            }, {
+                "id": "FC",
+                "title": "Food Courts",
+                "about": "",
+                "description": "Unit: Food Court",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4403",
+                "y": "0.8352"
+            }, {
+                "id": "230",
+                "title": "Coach",
+                "about": "",
+                "description": "Unit: 230",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.4003",
+                "y": "0.7352"
+            }, {
+                "id": "224",
+                "title": "Versace Company Store",
+                "about": "",
+                "description": "Unit: 224",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3503",
+                "y": "0.7452"
+            }, {
+                "id": "222",
+                "title": "Bally",
+                "about": "",
+                "description": "Unit: 222",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3353",
+                "y": "0.7252"
+            }, {
+                "id": "220",
+                "title": "Brooks Brothers Factory Store",
+                "about": "",
+                "description": "Unit: 220",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.3153",
+                "y": "0.7252"
+            }, {
+                "id": "218",
+                "title": "Tommy Hilfiger",
+                "about": "",
+                "description": "Unit: 218",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2953",
+                "y": "0.6852"
+            }, {
+                "id": "214",
+                "title": "Kipling",
+                "about": "",
+                "description": "Unit: 214",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2753",
+                "y": "0.6552"
+            }, {
+                "id": "212",
+                "title": "Victoria's Secret",
+                "about": "",
+                "description": "Unit: 212",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2653",
+                "y": "0.6152"
+            }, {
+                "id": "210",
+                "title": "The Cosmetics Company Store",
+                "about": "",
+                "description": "Unit: 210",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2553",
+                "y": "0.5952"
+            }, {
+                "id": "208",
+                "title": "Braun Buffel",
+                "about": "",
+                "description": "Unit: 208",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2403",
+                "y": "0.5752"
+            }, {
+                "id": "206",
+                "title": "Fidani Chocolate",
+                "about": "",
+                "description": "Unit: 206",
+                "category": "misc",
+                "thumbnail": "",
+                "x": "0.2243",
+                "y": "0.5752"
+            }, {
+                "id": "204",
+                "title": "George & Dragon Café",
+                "about": "",
+                "description": "Unit: 204",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.2043",
+                "y": "0.5652"
+            }, {
+                "id": "200",
+                "title": "The Coffee Bean & Tea Leaf",
+                "about": "",
+                "description": "Unit: 200",
+                "category": "food",
+                "thumbnail": "",
+                "x": "0.1773",
+                "y": "0.5652"
+            }
+
+        ]
+    }]
+}

@@ -1,0 +1,100 @@
+page-full-profile {
+    ion-navbar{
+        button{
+            margin: 5px 0 0 5px !important;
+        }
+        strong{
+            height: 35px;
+            width: 35px;
+            border: 4px solid #fbca01;
+            border-radius: 50%;
+            display: block;
+            margin: 4px 0 0 10px;
+            span{
+                color: $default;
+                font-size: 12px;
+                display: block;
+                margin: 6px 0 0 0;
+                text-align: center;
+            }
+        }
+    }
+    ion-label{
+        margin: 0 !important;
+        p{
+            color:red !important;
+        }
+    }
+    h4{
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    a{
+        display: block;
+        font-size: 17px;
+        color: #007aff;
+        text-decoration: none;
+        margin: 15px 0 0 0;
+    }
+    ion-checkbox{
+        margin:0 15px 0 0 !important;
+    }
+    ion-item{
+        font-size: 14px !important;
+        .item-inner{
+            border-bottom: 0 !important;
+            padding: 0 !important;
+            input{
+                margin: 5px 0 !important;
+                padding-left: 10px !important;
+            }
+        }
+        ion-input{
+            height: 35px;
+            border:1px solid $dark-x;
+        } 
+        ion-label{
+            white-space: pre-line;
+        }
+    }
+    .item-input:last-child{
+        border-bottom: 0 !important;   
+    }
+    form{
+        ion-card-content{
+            border: 1px solid $secondary;;
+        }
+        h4{
+            margin: 0;
+            color: $secondary;;
+        }
+        button{
+            padding: 0 !important;
+            margin: -5px 0 0 0 !important;
+        }
+    }
+    ion-label{
+        color: $dark;
+        text-transform: capitalize !important;
+    }
+
+    .mobile{
+        span{
+            font-size: 22px;
+            background: #000;
+            display: block;
+            width: 9vw;
+            padding: 0;
+            height: 35px;
+            color: #fff;
+            text-align: center;
+        }
+        ion-input{
+            border: 1px solid #333;
+            height: 35px;
+            input{
+                margin: 6px 0 0 6px;
+            }
+        }
+    }
+}

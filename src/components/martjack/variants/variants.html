@@ -1,0 +1,27 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+        <section (click)="chooseVariants()">
+          <!-- <input type="radio" name="color" id="red" value="red" />
+          <label for="red" (click)="chooseColor()" ></label> -->
+          <img *ngIf="swatchImage" [src]="swatchImage" />
+          <p *ngIf="propertyValue" [innerHTML]="propertyValue"></p>
+        </section>
+      <!-- </section> -->
+        <!-- <input type="radio" name="color" id="green" />
+        <label for="green"><span class="green"></span></label>
+        
+        <input type="radio" name="color" id="yellow" />
+        <label for="yellow"><span class="yellow"></span></label> -->
+        
+        <!-- <input type="radio" name="color" id="olive" />
+        <label for="olive"><span class="olive"></span></label>
+        
+        <input type="radio" name="color" id="orange" />
+        <label for="orange"><span class="orange"></span></label>
+        
+        <input type="radio" name="color" id="teal" />
+        <label for="teal"><span class="teal"></span></label> -->
+    </ion-col>
+  </ion-row>
+</ion-grid>

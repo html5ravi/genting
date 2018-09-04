@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-2>
+        <!-- <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon> -->
+      </ion-col>
+      <ion-col col-8>
+        <figure no-margin>
+          <strong>My Account</strong>
+        </figure>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button icon-only menuToggle>
+          <ion-icon tappable name="menu"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card>
+    <ion-card-header padding>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-8>
+            <!-- <ion-icon name="arrow-back"></ion-icon> -->
+            <strong>MY ORDERS</strong>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content *ngIf="orderList?.length > 0">
+      <ion-card padding class="bb" *ngFor="let order of orderList">
+        <ion-grid no-padding (click)="goto(order?.OrderId,order?.OrderDateLocal)">
+          <ion-row>
+            <ion-col>
+              <p>order number</p>
+              <strong>{{order?.OrderId}}</strong>
+            </ion-col>
+            <ion-col text-right>
+              <p>Date Ordered <strong>{{order?.OrderDateLocal | stringtodate}}</strong></p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-left>
+              <p>Order Status <strong>{{checkoutProvider.getOrderStatus(order?.Status)}}</strong></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-card-content>
+    <ion-card-content *ngIf="orderList?.length <= 0">
+      <article class="emptyCart">
+        <h4>Your Orders</h4>
+        <p>We are yet to receive your first order.</p>
+      </article>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

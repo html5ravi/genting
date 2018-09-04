@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+          <ion-col col-2>
+              <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+          </ion-col>
+          <ion-col col-8>
+              <figure no-margin>
+                  <strong>Item Details</strong>
+              </figure>
+          </ion-col>
+      <!-- <ion-col col-2>
+          <button ion-button icon-only menuToggle>
+          <ion-icon tappable name="menu"></ion-icon>
+        </button>
+      </ion-col> -->
+        </ion-row>
+    </ion-navbar>
+  </ion-header>
+<ion-content no-padding>
+  <ion-card padding class="bb">
+      <p>order number <strong>1234567</strong></p>
+  </ion-card>
+  <ion-card padding>
+    <figure no-margin>
+      <img src="assets/images/martjack/prd3.png" width="100%"/>
+    </figure>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-8>
+            <h6>Brand</h6>
+            <h6>Product Name</h6>
+            <ion-grid no-padding>
+              <ion-row class="listData">
+                <ion-col col-10>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Color:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>white</strong>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Size:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>xs</strong>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Quantity:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>1</strong>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Price:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>MYR 185</strong>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid no-padding>
+              <ion-row class="listData">
+                <ion-col col-10>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Product No:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>1184990</strong>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6>
+                      <span>Murchant ID:</span>
+                    </ion-col>
+                    <ion-col col-6>
+                      <strong>123454</strong>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-card>
+</ion-content>

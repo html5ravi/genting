@@ -1,0 +1,83 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+  <ion-header>
+    <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding no-bounce #container>
+  <figure no-margin class="fixedHeight">
+    <img src="assets/images/findDeals.png" />
+  </figure>
+  
+  <ion-card-content>
+    <h6 no-margin>{{ "DEALS_PAGE.STATIC_TEXT.FILTER" | translate }}</h6>
+    <ion-item no-padding class="itemCustom">
+      <ion-label>{{ "COMMON.STATIC_TEXT.CATEGORIES" | translate }}</ion-label>
+      <ion-select [(ngModel)]="userData.category" name="category" (ngModelChange)="filterdataByCategory()" multiple="true">
+        <ion-option *ngFor="let category of allStoreCategories" value="{{category?._id}}">{{category?.categoryname}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding class="itemCustom">
+        <ion-label>{{ "DEALS_PAGE.STATIC_TEXT.ALL_STORES" | translate }}</ion-label>
+        <ion-select [(ngModel)]="userData.storename" name="storename"  (ngModelChange)="filterdataByStoreName()">
+            <ion-option value="All">All</ion-option>
+          <ion-option *ngFor="let store of allStores" value="{{store.storename}}">{{store.storename}}</ion-option>
+        </ion-select>
+      </ion-item>
+    
+    <h6>{{ "DEALS_PAGE.STATIC_TEXT.SORT" | translate }}</h6>
+    <ion-segment [(ngModel)]="segment" color="dark">
+        <ion-segment-button active value="">
+            ALL
+        </ion-segment-button>
+        <ion-segment-button value="a-l">
+            A-L
+        </ion-segment-button>
+        <ion-segment-button value="m-z">
+            M-Z
+        </ion-segment-button>
+        <ion-segment-button value="others">
+            OTHERS
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-content>
+    <ion-list>
+      <ion-item tappable *ngFor="let deals of filteredDealList | sortBy:segment" (click)="gotoPromotions(deals)">
+        <ion-row>
+          <ion-col col-2>
+              <ion-avatar item-start>
+                  <img *ngIf="deals?.bannerimage"  [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="deals?.bannerimage" [scrollObservable]="container.ionScroll">
+                  <img *ngIf="!deals?.bannerimage && deals?.associatedstore[0]?.brandlogo" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="deals?.associatedstore[0]?.brandlogo" [scrollObservable]="container.ionScroll">
+                  <img *ngIf="!deals?.bannerimage && !deals?.associatedstore[0]?.brandlogo && deals?.associatedstore[0]?.brandimage" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="deals?.associatedstore[0]?.brandimage" [scrollObservable]="container.ionScroll">
+                  <img *ngIf="!deals?.bannerimage && !deals?.associatedstore[0]?.brandlogo && !deals?.associatedstore[0]?.brandimage" src="assets/images/defaultimg.png">
+                </ion-avatar>
+          </ion-col>
+          <ion-col col-10>
+              <span>{{deals?.promotiontitle}}</span>
+              <p [innerHtml]="deals.promotiondescription | safehtml"></p>
+          </ion-col>
+        </ion-row>
+        
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+

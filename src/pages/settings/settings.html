@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-2>
+                <ion-icon name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+            </ion-col>
+            <ion-col col-8>
+               <strong>Settings</strong>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-card padding>
+    <p><ion-icon name="settings"></ion-icon> Setting </p>
+  </ion-card>
+  <ion-card-header padding>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col>
+          <span>Notification</span>
+        </ion-col>
+        <ion-col>
+            <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-header>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <bottom-menu></bottom-menu>
+  </ion-toolbar>
+</ion-footer>

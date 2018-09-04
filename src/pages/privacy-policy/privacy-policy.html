@@ -1,0 +1,41 @@
+
+  <!-- <header [canShowMenu]=true [showBackButton]=true></header> -->
+
+  <ion-header>
+      <ion-navbar>
+        <ion-row>
+                <ion-col col-2>
+                        <ion-icon *ngIf="!hideBackButton && !fromPage" name="arrow-back" class="backIco" (click)="gotoPage('HomePage')"></ion-icon>
+                        <ion-icon *ngIf="fromPage" name="arrow-back" class="backIco" (click)="goBack()"></ion-icon>
+                    </ion-col>
+            <ion-col col-8>
+                <figure no-margin>
+                    <img *ngIf="!fromPage" src="{{userdataProvider?.selectMallLogo}}" (click)="gotoPage('HomePage')">
+                </figure>
+            </ion-col>
+            <ion-col col-2 *ngIf="!fromPage">
+                <button ion-button icon-only menuToggle>
+                <ion-icon tappable name="menu"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+  <ion-content no-padding no-bounce>
+      <figure no-margin class="fixedHeight">
+        <img src="assets/images/appDetails.jpg" />
+        <figcaption>
+            <h3><strong>{{ "PRIVACY_POLICY_PAGE.STATIC_TEXT.PRIVACY" | translate }}</strong>{{ "PRIVACY_POLICY_PAGE.STATIC_TEXT.POLICY" | translate }}.</h3>
+          </figcaption>
+      </figure>
+      
+      <ion-card-content>
+        <article *ngFor="let privacy of privacyDetails">
+          <section *ngIf="privacy?.key=='privacypolicy'">
+              <p [innerHtml]="privacy?.datavalue | safehtml"></p>
+          </section>
+        </article>
+    </ion-card-content>
+    </ion-content>

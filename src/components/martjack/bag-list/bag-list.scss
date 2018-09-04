@@ -1,0 +1,102 @@
+bag-list {
+    .bb{
+        border-bottom: 1px solid #4a4a4a;
+        padding-bottom: 6px;
+    }
+    ion-grid{
+        position: relative;
+        .closeIco{
+            font-size: 20px;
+            color:#000;
+            position: absolute;
+            top:0;
+            right: 0;
+            z-index: 999;
+        }
+    }
+    ion-list{
+        padding:0 !important;
+        .item-inner{
+            padding:0 !important;
+        }
+        figure{
+            img{
+                widows: 100%;
+            }
+        }
+    }
+    h6{
+        font-size: 10px !important;
+        color:#000 !important;
+        font-weight: bold !important;
+        margin:0 !important;
+    }
+    p{
+        font-size: 10px !important;
+        color:#4a4a4a !important ;
+        font-weight: 300 !important;
+        margin:0 !important;
+        white-space: pre-line !important;
+    }
+    h5{
+        font-size: 12px !important;
+        font-weight: bold !important;
+        color:$secondary !important;
+        margin: 10px 0 !important;
+    }
+    span{
+        font-size: 8px !important;
+        color:#4a4a4a !important;
+    }
+    strong{
+        font-size: 8px !important;
+        color:#4a4a4a !important;
+    }
+    button{
+        ion-icon{
+            color: $dark;
+            margin: 0 0 0 5px;
+        }
+    }
+    .listData{
+        ion-col{
+            padding:0 !important;
+            line-height: 10px;
+        }
+    }
+    .selectQty{
+        border:1px solid #4a4a4a !important;
+        border-radius: 10px !important;
+        ion-label{
+            margin: 0 0 0 5px !important;
+        }
+        ion-select{
+            position: relative;
+            left: -10px;
+            padding: 3px 20px 3px 16px !important;
+            button{
+                padding: 0 !important;
+            }
+        }
+    }
+    .primary{
+        padding: 0 !important;
+    }
+    .secondary{
+        padding: 0 !important;
+        span{
+            color:$secondary !important;
+        }
+    }
+    .select-icon-inner {
+        left: -17px !important;
+        border-top: 5px solid !important;
+        border-right: 5px solid transparent !important;
+        border-left: 6px solid transparent !important;
+        color: #000;
+        top: 14px !important;
+    }
+    ion-card-content{
+        padding-bottom: 0 !important;
+    }
+}

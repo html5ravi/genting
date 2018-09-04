@@ -1,0 +1,47 @@
+
+
+<header [canShowMenu]=true [showBackButton]=true></header>
+
+
+<ion-content no-padding no-bounce #container>
+  <figure no-margin>
+    <img *ngIf="storedata && storedata?.brandimage" class="storeImg" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="storedata?.brandimage"/>
+    <img *ngIf="storedata && !storedata?.brandimage" src="assets/images/defaultimg.png" class="storeImg" />
+    <img  *ngIf="!storedata" src="assets/images/defaultimg.png" class="storeImg"/>
+  </figure>
+  <ion-card-content *ngIf="storedata">
+
+    <h4>{{storedata?.storename}}</h4>
+    <p [innerHtml]="storedata?.description | safehtml"> </p>
+    <h6 *ngIf="storedata?.storehours">{{ "STORE_DETAILS_PAGE.STATIC_TEXT.STORE_HOURS" | translate }}:</h6>
+    <p no-margin [innerHtml]="storedata?.storehours | safehtml"></p>
+    <h6 *ngIf="storedata?.bestentrance">{{ "STORE_DETAILS_PAGE.STATIC_TEXT.ENTRANCE" | translate }}:</h6>
+    <p no-margin >{{storedata?.bestentrance}}</p>
+    <h6 *ngIf="storedata?.locationincenter">{{ "STORE_DETAILS_PAGE.STATIC_TEXT.CENTER" | translate }}:</h6>
+    <p no-margin>{{storedata?.locationincenter}}</p>
+  </ion-card-content>
+  <ion-card-content  *ngIf="!storedata">
+      <h4>{{ "STORE_DETAILS_PAGE.STATIC_TEXT.SOON" | translate }}</h4>
+  </ion-card-content>
+<strong *ngIf="storedata" class="divider"></strong>
+<ion-card-content *ngIf="storedata">
+  <button ion-button block color="dark" margin-bottom padding (click)="gotoMapPage(storedata?.unitnumber)">{{ "STORE_DETAILS_PAGE.BUTTONS.VISIT_STORE" | translate }}</button>
+  <button ion-button block color="dark" margin-bottom  *ngIf="storedata?.phone"><a href="tel:{{storedata?.phone}}">{{ "STORE_DETAILS_PAGE.BUTTONS.CALL" | translate }} {{storedata?.phone}}</a></button>
+  <button ion-button block color="dark" margin-bottom padding (click)="shareSocial(storedata?.websiteurl)">
+    {{ "STORE_DETAILS_PAGE.BUTTONS.SHARE" | translate }}</button>
+  <h3 text-uppercase *ngIf="storesPromotionList.length > 0 ">{{storedata?.storename}} offers</h3>
+    
+  <ul class="sliderWrap">
+      <li *ngFor="let promo of storesPromotionList" (click)="gotoPromotion(promo)">
+          <figure>
+            <img *ngIf="promo?.bannerimage"  [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="promo?.bannerimage" [scrollObservable]="container.ionScroll"/>
+            <img *ngIf="!promo?.bannerimage && promo?.associatedstore[0]?.brandlogo" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="promo?.associatedstore[0]?.brandlogo" [scrollObservable]="container.ionScroll" >
+            <img *ngIf="!promo?.bannerimage && !promo?.associatedstore[0]?.brandlogo && promo?.associatedstore[0]?.brandimage" [defaultImage]="'assets/images/default-Img.png'" [lazyLoad]="promo?.associatedstore[0]?.brandimage" [scrollObservable]="container.ionScroll">
+            <img *ngIf="!promo?.bannerimage && !promo?.associatedstore[0]?.brandlogo && !promo?.associatedstore[0]?.brandimage" src="assets/images/defaultimg.png">
+          </figure>
+          <figcaption>{{promo?.promotiontitle}}</figcaption>
+      </li>
+    </ul>
+
+</ion-card-content>
+</ion-content>

@@ -1,0 +1,40 @@
+promotion-list {
+    .promotionList{
+        margin-top: 10px;
+        margin-left: 10px;
+        ul{
+            margin: 0 0px 0 0;
+            padding: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            li{
+                margin: 0 15px 20px 0;
+                padding: 0;
+                list-style: none;
+                display: inline-block;
+                width: 125px;
+                figure{
+                    margin: 0;
+                    height: 200px;
+                    width: 130px;
+                    overflow: hidden;
+                    img{
+                        width:100%;
+                        height: 130px;
+                    }
+                }
+                figcaption{
+                    background: $dark;
+                    color:$default;
+                    font-size: 14px;
+                    padding: 10px 5px 5px 5px;
+                    white-space: pre-line;
+                    height: 70px;
+                    overflow: hidden;
+                    margin-top: -5px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

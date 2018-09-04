@@ -1,0 +1,134 @@
+page-my-bag {
+    ion-segment-button{
+        ion-icon{
+            color:#d8d8d8;
+        }
+        strong{
+            position: relative;
+            top: -5px;
+            margin: 0 5px 0 5px;
+            color:#d8d8d8;
+            font-weight: 300;
+        }
+        span{
+            position: relative;
+            top: -6px;
+            background: #d8d8d8;
+            height: 18px;
+            width: 18px;
+            padding: 2px 0 0 0;
+            display: inline-block;
+            line-height: 13px;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            text-align: center;
+        }
+        &.segment-activated{
+            border-bottom:3px solid #9f005b !important;
+            strong{
+                color:#9f005b;
+            }
+            ion-icon{
+                color:#9f005b;
+            }
+            span{
+                background:#9f005b;
+            }
+        }
+    }
+    ion-item{
+        padding:0 !important;
+        .item-inner{
+            padding:0 !important;
+            border-bottom: 0 !important;
+        }
+    }
+    ion-card-content{
+        .top{
+            background: #e4e4e4;
+            padding:30px;
+            article{
+                p{
+                    color:#414141;
+                    font-size: 16px !important;
+                    margin:0 0 10px !important;
+                }
+                a{
+                    text-transform: uppercase;
+                    color: #414141;
+                    text-decoration: underline;
+                    font-size: 14px !important;
+                }
+                button{
+                    padding: 0 !important;
+                    margin:0 !important;
+                }
+                input{
+                    background: transparent;
+                    width: 100%;
+                    display: block;
+                    height: 40px;
+                    border: 0;
+                    border-bottom: 1px solid #979797;
+                    color: #4a4a4a;
+                    padding: 5px;
+                    text-transform: none;
+                }
+            }
+        }
+        .bottom{
+            background: #d8d8d8;
+            padding:30px;
+            .bt{
+                border-top:1px solid #979797;
+                padding-top:10px;
+            }
+            h5{
+                color: #9f005b;
+                font-size: 14px !important;
+                margin:0 !important;
+            }
+            h4{
+                color: #9f005b;
+                font-size: 20px !important;
+                margin:0 !important;
+            }
+            span{
+                color:#222222;
+                font-size: 14px !important;
+            }
+        }
+    }
+    .default{
+        width:82% !important;
+        margin:30px 30px 80px 30px !important;
+    }
+    .emptyCart{
+        width: 80%;
+        margin: 30% auto;
+        text-align: center;
+        h4{
+            font-size: 16px;
+            color:#000;
+            font-weight: bold;
+        }
+        p{
+            font-size: 14px;
+            color:#555;
+        }
+    }
+
+    .removeVoucher {
+        position: absolute;
+        top: 3px;
+        right: -13px;
+        font-size: 20px;
+    }
+
+    @media(max-width:350px){
+        .secondary span {
+            font-size: 10px !important;
+        }
+    }
+}

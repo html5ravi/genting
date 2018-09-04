@@ -1,0 +1,93 @@
+page-login-full-info {
+    .back-button.show-back-button {
+        position: absolute;
+        z-index: 9999;
+    }
+    figure.marginAdj{
+        margin: -15px -16px 15px -16px;
+        img{
+            width: 100%;
+        }
+    }
+    ion-header{
+        a{
+            font-size: 15px !important;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: absolute;
+            right: 15px;
+            top: 20px;
+        }
+    }
+    ion-checkbox{
+        margin:0 15px 0 0 !important;
+    }
+    ion-item{
+        font-size: 14px !important;
+        .item-inner{
+            border-bottom: 0 !important;
+            padding: 0 !important;
+            input{
+                margin: 5px 0 !important;
+                padding-left: 10px !important;
+            }
+        }
+        ion-input{
+            height: 35px;
+            border:1px solid $dark-x;
+        } 
+    }
+    .item-input:last-child{
+        border-bottom: 0 !important;   
+    }
+    form{
+        ion-card-content{
+            border: 1px solid $secondary;;
+        }
+    }
+    ion-label{
+        color: $dark;
+    }
+    ion-item p{
+        color:red !important;
+    }
+
+    .terms{
+        height: 200px;
+        max-height: 100%;
+        overflow: scroll;
+    }
+    .mobile{
+        span{
+            font-size: 22px;
+            background: #000;
+            display: block;
+            width: 9vw;
+            padding: 0;
+            height: 35px;
+            color: #fff;
+            text-align: center;
+        }
+        ion-input{
+            border: 1px solid #333;
+            height: 35px;
+            input{
+                margin: 6px 0 0 6px;
+            }
+        }
+    }
+    ion-label{
+        text-transform: capitalize !important;
+    }
+    .subCnt{
+        padding: 0 10px;
+        p{
+            font-size: 14px !important;
+            margin-left: 5px;
+        }
+    }
+
+
+}

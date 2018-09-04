@@ -1,0 +1,346 @@
+page-check-out {
+  
+    .backIco{
+        color:#000 !important;
+    }
+    ion-header{
+        height: 60px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+        .toolbar-content {
+            strong{
+                color:#000 !important;
+                text-transform: uppercase;
+                font-size: 18px;
+                position: relative;
+                top: 13px;
+                display: block;
+                text-align: center;
+                margin: -22px 0 0 0;
+            
+            }
+        }
+        .toolbar-background{
+            background: #fff !important;
+        }
+        button{
+            color:#000 !important;
+        }
+    }
+    ion-card{
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        h6{
+            text-align: center;
+            font-size: 15px;
+            margin: 0 0 0 0;
+            color: #444;
+        }
+    }
+    ion-segment{
+        ion-segment-button{
+            border: 0 !important;
+            strong{
+                height: 20px;
+                width: 20px;
+                border: 1px solid #aaa;
+                display: block;
+                border-radius: 50%;
+                background: #fff !important;
+                text-align: center;
+                margin: 10px auto;
+            }
+            &.segment-activated{
+                background-color: transparent !important;
+                strong{
+                    background-color:#9f005b !important;
+                }
+            }
+        }
+    }
+    .card-ios {
+         ion-segment-button{
+            strong{
+                margin: 0px auto;
+            }
+         }
+    }
+    .content-ios hr {
+        height: 1px;
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: #fff;
+        
+    }
+    %line1{
+        margin: 0;
+        background: #222;
+        position: relative;
+        top: -22px;
+        z-index: 99999;
+        width: 27.2%;
+        left: 19.5%;
+    }
+    .line1{
+        @extend %line1;
+    }
+    .line2{
+        @extend %line1;
+        left: 53%;
+    }
+    ion-item{
+        padding:0 !important;
+        .item-inner{
+            padding: 0 !important;
+        }
+        ion-card-content{
+            h2{
+                text-transform: uppercase;
+            }
+        }
+        h5{
+            color:#555;
+            margin-bottom: 5px !important;
+        }
+        .date{
+            border: 1px solid #000;
+            padding: 4px 0 0 0;
+            position: relative;
+            height: 40px;
+            ion-icon{
+                position: absolute;
+                right: 10px;
+                font-size: 20px;
+            }
+        }
+        small{
+            display: block;
+            white-space: pre-line;
+            margin-top: 5px;
+            color:#666;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .userDetail{
+            .Profiledetail{
+                background: #eee;
+                padding: 15px;
+                margin-bottom: 5px;
+                strong{
+                    text-transform: uppercase;
+                    color:#444;
+                }
+                ul{
+                    padding: 0 0 0 10px;
+                    margin: 0;
+                    li{
+                        margin: 5px 0;
+                        padding: 0;
+                        list-style: none;
+                        display: block;
+                        font-size: 14px;
+                        color: #555;
+                    }
+                }
+            }
+            ion-list{
+                margin: 5px 0 0 0 !important;
+                ion-item{
+                    padding:0 !important;
+                    .item-inner{
+                        border-bottom: 0 !important;
+                        border-top:0 !important;
+                        padding: 0 !important;
+                    }
+                    ion-label{
+                        margin: 0 !important;
+                    }
+                }
+                ion-icon{
+                    position: absolute;
+                    right: 0;
+                    top: 0px;
+                    right: 7px;
+                    font-size: 20px;
+                }
+                h3{
+                    font-weight: bold !important;
+                    font-size: 15px !important;
+                    margin: 0px 0 0 0 !important;
+                    background: #ccc !important;
+                    margin: 0 0 0 0px !important;
+                    padding: 15px 0 5px 25px !important;
+                    line-height: 20px !important;
+                    // text-align: center;
+                    span{
+                        position: relative;
+                        top: -5px;
+                    }
+                    img{
+                        height: 30px;
+                        width: 30px;
+                        display: inline-block;
+                        margin: 0px 5px 0 0;
+                        position: relative;
+                        top: 5px;
+                    }
+                }
+                article{
+                    margin: 10px 0 0 0 !important;
+                    border:0 !important;
+                }
+            }
+            h2{
+                margin: 5px 0 0 0;
+                background: #eee;
+                padding: 15px;
+                text-align: center;
+                ion-icon{
+                    font-size: 25px;
+                    line-height: 0;
+                    position: relative;
+                    top: 4px;
+                    left: -10px;
+                }
+            }
+        }
+        label{
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+        }
+    }
+    .bottomButton{
+        width:90%;
+        margin: auto;
+    }
+    .item-inner{
+        border:0 !important;
+    }
+    .textApply{
+        span{
+            text-transform: uppercase;
+            font-size: 12px;
+            display: block;
+            margin: -8px 0 0 0;
+        }
+    }
+    .insideData{
+        padding: 0 20px;
+        form{
+            ion-input{
+                border-bottom: 1px solid #ccc;
+            }
+            small{
+                background: #ccc;
+                padding: 15px 25px;
+                display: block;
+                line-height: 14px;
+                white-space: inherit;
+                text-align: center;
+            }
+            p{
+                font-size: 10px;
+                text-align: center;
+                border-top: 1px solid #ccc;
+                padding-top: 15px;
+            }
+            button{
+                display: block;
+                text-align: center;
+                margin: 20px auto;
+                width: 40%;
+                height: 40px;
+                padding: 0 !important;
+            }
+        }
+    }
+    .total{
+        background: #eee;
+        padding: 20px;
+        span{
+            text-transform: uppercase;
+            display: block;
+            margin: 5px 0 0 0;
+        }
+        h4{
+            font-size: 30px !important;
+            color:#9f005b;
+            margin:0 !important;
+        }
+    }
+    .orderConfirm{
+        h3{
+            font-weight: bold;
+            color:#444;
+            font-size: 18px;
+        }
+        p{
+            font-size: 12px;
+        }
+        h4{
+            color:#9f005b;
+            strong{
+                // display: block;
+                font-weight: bold;
+            }
+        }
+        small{
+            display: block;
+            color:#333;
+        }
+        h2{
+            color:#9f005b;
+            margin: 0;
+            text-align: center;
+            border:1px solid #333;
+            padding: 15px;
+            font-size: 12px !important;
+        }
+    }
+   .error{
+       padding: 0 !important;
+       margin:0 !important;
+       border:0 !important;
+       color:red;
+   }
+   .emptyCart{
+    width: 85%;
+    margin: 15% auto;
+    text-align: left;
+    h4{
+        font-size: 20px;
+        color:#000;
+        font-weight: bold;
+    }
+    p{
+        font-size: 18px;
+        font-weight: 100;
+        color:#000;
+    }
+    button{
+        position: fixed;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: auto;
+    }
+}
+    .arrowBack {
+        font-size: 25px;
+    }
+
+    @media(max-width:350px){
+         .orderConfirm{
+             h2{
+                 font-size: 12px !important;
+             }
+         }
+    }
+}
+body{
+    border: 2px solid #555;
+}

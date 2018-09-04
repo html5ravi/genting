@@ -1,0 +1,57 @@
+<ion-menu side="right" [content]="content" persistent="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content no-bounce>
+    <ion-list>
+      <span *ngIf="loginTitle" tappable (click)="goto('FullProfilePage')">{{ "WELCOME" | translate }}, {{_userName}}</span>
+      <span *ngIf="!(isLoggedIn | async)">{{ "WELCOME" | translate }}, {{ "GUEST" | translate }}</span>
+      <button *ngIf="!(isLoggedIn | async)" class="loginBtn" menuClose ion-item (click)="goto('LoginPage')">
+        {{"COMMON.BUTTONS.LOGIN" | translate }}</button>
+      <button *ngIf="(isLoggedIn | async)" class="loginBtn" menuClose ion-item (click)="checkCart_Logout()">
+        {{"COMMON.BUTTONS.LOGOUT" | translate }}</button>
+      <strong tappable (click)="goto('SelectOutletPage')" *ngIf="_showChooseMall">{{ "COMMON.BUTTONS.CHANGE_CENTER" | translate }}</strong>
+      <button tappable menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+<!-- No Internet Connection Modal -->
+<mymodal #nointernet>
+  <p text-center>{{ "MODALS.STATIC_TEXT.NO_INTERNET" | translate }}</p>
+  <ion-grid>
+      <p text-center>{{ "MODALS.STATIC_TEXT.CANNOT_DETECT" | translate }} </p>
+      <ion-row>
+          <ion-col col-12>
+              <button ion-button class="btn4" (click)="closeNoInternetModal()">
+                {{ "MODALS.BUTTONS.OK" | translate }}</button>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</mymodal>
+
+<section class="confirm">
+    <mymodal #checkCartModal class="modal">
+          <span tappable (click)="closeMdl()"></span>
+          <p no-margin text-center>Your bag contains items which you have selected. Do you want to discard the selection and logout ? </p>
+         <ion-row>
+           <ion-col>
+              <button ion-button block outline color="dark" margin-top (click)="closeMdl()">
+                  cancel</button>
+           </ion-col>
+           <ion-col>
+              <button ion-button block outline color="dark" margin-top style="color:#fff;background:#000" (click)="pushLogout()">
+                  ok</button>
+           </ion-col>
+         </ion-row>
+    </mymodal>
+</section>
+

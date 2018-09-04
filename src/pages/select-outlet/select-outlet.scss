@@ -1,0 +1,82 @@
+page-select-outlet {
+    ion-menu.show-menu {
+        display: none;
+    }
+    ion-content{
+    .scroll-content{
+        // background: url('../assets/images/black.png') no-repeat;
+        // background-size: cover;
+        margin-top: 0 !important;
+        padding: 10px !important;
+    }
+}
+    .head{
+        background: #fff;
+        // border-left: 10px solid #000;
+        // border-right: 10px solid #000;
+        padding: 17px !important;
+        h2{
+            line-height: 16px;
+        }
+    }
+    h2{
+        font-size: 28px;
+        color:$dark-x;
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: -1px;
+        line-height: 22px !important;
+        span{
+            color: $secondary;
+            display: block;
+        }
+    }
+    ion-card-content{
+        position: relative;
+        margin: 0 !important;
+        height: calc(50% - 45px);
+        img{
+            height: 100%;
+            width: 100%;
+            // padding: 10px 10px 0px 10px;
+        }
+        article{
+            position: absolute;
+            /* top: -7px; */
+            left: 0;
+            width: 100%;
+            margin: auto;
+            right: 0;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.61);
+            padding: 20px 15px;
+            margin: 0;
+            bottom: 0;
+            /* padding: 10px; */
+            h3{
+                font-size: 25px;
+                font-weight: bold;
+                color: #fff;
+                text-align: left;
+                text-transform: uppercase;
+                width: 100%;
+                margin: auto;
+                line-height: 21px;
+            }
+            p{
+                margin:0;
+                font-size: 18px;
+                color: $default;
+                text-align: center;
+            }
+        }
+    }
+    ion-card-content:nth-child(3){
+        margin-top: 10px !important;
+    }
+    .confirm{
+        .Modalbody{
+          padding: 20px !important;
+        }
+      }
+}

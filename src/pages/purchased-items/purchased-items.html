@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+          <ion-col col-2>
+          </ion-col>
+          <ion-col col-8>
+              <figure no-margin>
+                  <strong>purchased items</strong>
+              </figure>
+          </ion-col>
+      <!-- <ion-col col-2>
+          <button ion-button icon-only menuToggle>
+          <ion-icon tappable name="menu"></ion-icon>
+        </button>
+      </ion-col> -->
+        </ion-row>
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content no-padding>
+  <ion-card padding>
+    <article *ngIf="pendingItemLength!=''">
+      <p>You have {{ pendingItemLength }} items to be collected at <br />
+      <strong>{{userdataProvider?.selectedMall}}</strong>
+      {{expectedPickdate}}</p>
+    </article>
+    <ion-grid no-padding class="number">
+      <ion-row>
+        <ion-col>
+          <p>order number <strong>{{orderId}}</strong></p>
+        </ion-col>
+        <ion-col text-right *ngIf="orderDate != ''">
+            <p>date ordered</p>
+            <!-- <strong style="color:#9f295a">{{orderDate | stringtodate}}</strong> -->
+            <strong style="color:#9f295a">{{ orderDate }}</strong>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <hr />
+  <div *ngFor="let items of orderedItems">
+  <ion-card padding *ngFor="let item of items.OrderLineId">
+      <item-list [product]="item" [merchantid]="items?.MerchantId" (findstore)="findStore($event)"></item-list>
+  </ion-card>
+</div>
+  
+</ion-content>

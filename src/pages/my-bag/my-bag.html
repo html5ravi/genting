@@ -1,0 +1,103 @@
+<!-- Header Component-->
+
+<top-header></top-header>
+<!-- Main Content Goes Here-->
+<ion-content no-padding>
+      <!-- <ion-segment [(ngModel)]="ProductList">
+            <ion-segment-button value="MyWishList">
+                  <ion-icon name="heart-outline"></ion-icon>
+                  <strong>My Wishlist </strong>
+                  <span>2</span>
+            </ion-segment-button>
+            <ion-segment-button value="MyBag">
+                  <ion-icon name="cart"></ion-icon>
+                  <strong> My Bag </strong>
+                  <span>2</span>
+            </ion-segment-button>
+      </ion-segment> -->
+
+      <!-- <section [ngSwitch]="ProductList">
+            <ion-list *ngSwitchCase="'MyBag'"> -->
+      <section *ngIf="tokenValid != ''">
+            <ion-list *ngIf="cartList?.CartItems?.length > 0">
+                  <ion-item *ngFor="let cartItem of cartList?.CartItems">
+                        <bag-list [cartdetails]="cartItem" (cartEvent)="deleteCartItem($event)" (quantityEvent)="changeQuantity($event)"></bag-list>
+                  </ion-item>
+                  <ion-card-content no-padding margin-top>
+                        <section class="top" *ngIf="couponDetail && cartList?.VoucherDiscount <= 0">
+                              <article text-center *ngIf="getCouponData">
+                                    <p>Get discount from your coupon code?</p>
+                                    <a href="javascript:;" (click)="getCouponCode()">CLICK HERE</a>
+                              </article>
+                              <article *ngIf="applyCoupon">
+                                    <ion-grid>
+                                          <ion-row>
+                                                <ion-col col-8>
+                                                      <input type="text" [(ngModel)]="couponCode" placeholder="Enter a Coupon Code">
+                                                </ion-col>
+                                                <ion-col col-4>
+                                                      <button ion-button block color="secondary" (click)="applyCouponCode(couponCode)">Apply</button>
+                                                </ion-col>
+                                          </ion-row>
+                                    </ion-grid>
+                              </article>
+                        </section>
+                        <section class="bottom">
+                              <article>
+                                    <ion-grid>
+                                          <ion-row>
+                                                <ion-col col-6>
+                                                      <span>Sub total ({{cartList?.CartItems?.length}} items)</span>
+                                                </ion-col>
+                                                <ion-col col-6 text-right>
+                                                      <h5>MYR {{cartList?.ProductCost | decimal }} </h5>
+                                                </ion-col>
+                                          </ion-row>
+                                          <ion-row margin-bottom class="bt" *ngIf="discountDetail || cartList?.VoucherDiscount">
+                                                <ion-col col-6>
+                                                      <span text-uppercase>Discount </span>
+                                                </ion-col>
+                                                <ion-col col-6 text-right>
+                                                      <h5>MYR {{cartList?.VoucherDiscount | decimal}} </h5>
+                                                      <ion-icon class="removeVoucher" name="close" (click)="undoVoucher()"></ion-icon>
+                                                </ion-col>
+                                                
+                                          </ion-row>
+                                          <ion-row class="bt">
+                                                <ion-col col-6>
+                                                      <span text-uppercase>total </span>
+                                                </ion-col>
+                                                <ion-col col-6 text-right>
+                                                      <h4 *ngIf="cartList?.OrderTotal > 0">MYR {{cartList?.OrderTotal | decimal }} </h4>
+                                                      <h4 *ngIf="cartList?.OrderTotal <= 0">MYR 0.00 </h4>
+                                                </ion-col>
+                                          </ion-row>
+                                    </ion-grid>
+                              </article>
+                        </section>
+                  </ion-card-content>
+                  <button margin ion-button block color="dark" class="default" (click)="goTo(cartList.OrderTotal)">Proceed
+                        to Purchase</button>
+            </ion-list>
+            <ion-list *ngIf="cartList?.CartItems?.length <= 0">
+                  <article class="emptyCart">
+                        <h4>Your cart is empty</h4>
+                        <p>Looks like you haven't made a choice yet</p>
+                        <button ion-button block (click)="goToPage('ShopPage')">back to menu</button>
+                  </article>
+            </ion-list>
+      </section>
+      <section *ngIf="tokenValid == ''">
+            <article class="emptyCart">
+                  <h4>Your haven't logged in</h4>
+                  <p>Looks like you haven't made a choice yet</p>
+                  <button ion-button block (click)="goToPage('LoginPage')">Login</button>
+            </article>
+      </section>
+      
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <bottom-menu [pagename]="'MyBagPage'"></bottom-menu>
+  </ion-toolbar>
+</ion-footer>
